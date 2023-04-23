@@ -1,15 +1,10 @@
 <script setup lang="ts">
 import { useDataTranslations } from '@/compositions/useDataTranslations'
 import { useRouterHelper } from '@/compositions/useRouterHelper'
-import { getAbility } from '@/data/abilities'
-import type { Ability, CustomAbility } from '@/data/abilities.types'
-import { getCharacter } from '@/data/characters'
-import type { Character, CustomCharacter } from '@/data/characters.types'
-import { isCharacterId, isCustomCharacterId } from '@/data/characters.types'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import IlustrationImg from '@/components/IlustrationImg.vue'
 import CustomLayout from '@/components/CustomLayout.vue'
+import { useWordTranslations } from '@/compositions/useWordTranslations'
 
 const { t } = useI18n()
 
@@ -20,19 +15,22 @@ const { getQueryParam } = useRouterHelper()
 const hasData = computed<boolean>(
   () =>
     getQueryParam('wordId') !== undefined ||
-    getQueryParam('setId') !== undefined ||
+    getQueryParam('wordSetId') !== undefined ||
     getQueryParam('roleId') !== undefined
 )
+const {getWordSet} = useWordTranslations()
 
 const roleId = computed<string | undefined>(() => getQueryParam('roleId'))
-const setId = computed<string | undefined>(() => getQueryParam('setId'))
+const wordSetId = computed<string | undefined>(() => getQueryParam('wordSetId'))
 const wordId = computed<string | undefined>(() => getQueryParam('wordId'))
+const wordSet = computed(() =>getWordSet(Number(wordSetId.value) ?? 0))
+const word = computed<string | undefined>(() => wordSet.value.words[Number(wordId.value)??0])
 
 const role = computed<string>(() => {
   switch (roleId.value) {
     case "1": return t("ui2.role.potato")
     case "2": return t("ui2.role.beetroot")
-    case "3": return t("ui2.role.rawTurnip")
+    case "3": return t("ui2.role.rottenTurnip")
     default: return "Unknown role"
   }
 })
@@ -42,9 +40,9 @@ const role = computed<string>(() => {
 <template>
   <CustomLayout locale-selector>
     <template v-if="hasData">
-
+          <h1>{{  roleId === '2' ? '???' : word }}</h1>
+          ---
           <h1>{{ role }}</h1>
-        
       </template>
 
     <template v-else>
