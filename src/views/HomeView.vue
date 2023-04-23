@@ -4,16 +4,42 @@ import { RouterLink, useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
 import { ref } from 'vue';
 import IconButton from '@/components/IconButton.vue'
+import { useWordTranslations } from '@/compositions/useWordTranslations'
+import seedrandom from 'seedrandom';
 
 const { t } = useI18n()
 const router = useRouter()
 
 const gameRound = ref<number>(Math.round(Math.random() * 100))
 const playerNumber = ref<number>()
-const wordSet = ref<number>(1)
+const wordSetId = ref<number>(1)
+const {getWordSet} = useWordTranslations()
+
+console.log(getWordSet(2));
 
 function handleCreateGame() {
-  router.push({ name: 'game', query: { roleId: '1', wordSetId: wordSet.value, wordId: '1' } })
+  const wordSet = getWordSet(wordSetId.value)
+  const wordId= gameRound.value % wordSet.words.length
+
+  // Fisher-Yates Algorithm
+function shuffle<T>(array:T[], randomGenerator:()=>number) :T[]{
+  array = [...array];
+  for(let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(randomGenerator() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const randomGenerator = seedrandom(`${gameRound.value}`);
+const orderedRoles = [
+  ...'1'.repeat(6),
+  ...'2'.repeat(4),
+  ...'3'.repeat(1),
+]
+      const shuffledRoles =  shuffle(orderedRoles, randomGenerator)
+
+  router.push({ name: 'game', query: { roleId: shuffledRoles[playerNumber.value ?? 0], wordSetId: wordSetId.value, wordId } })
 }
 </script>
 
@@ -34,7 +60,7 @@ function handleCreateGame() {
 
         <label class="fiel">
           <span class="field__label">{{ t('ui2.wordSet') }}</span>
-          <input v-model="wordSet" class="field__input" type="number" required max="999999" min="0" step="1" />
+          <input v-model="wordSetId" class="field__input" type="number" required max="999999" min="0" step="1" />
         </label>
       </div>
 

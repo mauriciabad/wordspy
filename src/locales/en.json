@@ -10,6 +10,30 @@
       "beetroot": "Beetroot"
     }
   },
+  "wordSets": {
+    "1": {
+      "name": "Aminals set",
+      "words": {
+        "1": "Cat",
+        "2": "Dog",
+        "3": "Elephant",
+        "4": "Lion",
+        "5": "Fish",
+        "6": "Parrot"
+      }
+    },
+    "2": {
+      "name": "Set 2",
+      "words": {
+        "1": "Big",
+        "2": "Thought",
+        "3": "Mana",
+        "4": "Electricity",
+        "5": "Pencil",
+        "6": "Love"
+      }
+    }
+  },
   "ui": {
     "storyteller": "Storyteller",
     "player": "Player | Players",
