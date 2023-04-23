@@ -14,24 +14,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/storyteller',
-      name: 'storyteller',
-      component: () => import('../views/StorytellerView.vue'),
-    },
-    {
-      path: '/new-game',
-      name: 'newGame',
-      component: () => import('../views/NewGameView.vue'),
-    },
-    {
-      path: '/distribute-roles',
-      name: 'distributeRoles',
-      component: () => import('../views/DistributeRolesView.vue'),
-    },
-    {
-      path: '/player',
-      name: 'player',
-      component: () => import('../views/PlayerView.vue'),
+      path: '/game',
+      name: 'game',
+      component: () => import('../views/GameView.vue'),
     },
   ],
 })

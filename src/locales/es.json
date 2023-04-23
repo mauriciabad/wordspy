@@ -1,4 +1,15 @@
 {
+  "ui2": {
+    "welcomeText": "Remolacha juego",
+    "gameRound": "Nº de partida",
+    "playerNumber": "Nº de jugador",
+    "wordSet": "Colección de palabras",
+    "role": {
+      "potato": "Patata",
+      "rottenTurnip": "Nabo podrido",
+      "beetroot": "Remolacha"
+    }
+  },
   "ui": {
     "storyteller": "Narrador",
     "player": "Jugador | Jugadores",

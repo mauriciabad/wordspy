@@ -1,4 +1,15 @@
 {
+  "ui2": {
+    "welcomeText": "The beetroot game",
+    "gameRound": "Game round number",
+    "playerNumber": "Player number",
+    "wordSet": "Word set",
+    "role": {
+      "potato": "Potato",
+      "rottenTurnip": "Rotten turnip",
+      "beetroot": "Beetroot"
+    }
+  },
   "ui": {
     "storyteller": "Storyteller",
     "player": "Player | Players",
