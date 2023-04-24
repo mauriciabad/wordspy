@@ -58,7 +58,7 @@ function handleCreateGame() {
   })
 }
 const url = computed<string>(() => {
-  const url = new URL(`${location.origin}/player`)
+  const url = new URL(`${location.origin}/`)
   if (gameRound.value) {
     url.searchParams.append('gameRound', String(gameRound.value))
   }
