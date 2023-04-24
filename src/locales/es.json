@@ -6,6 +6,7 @@
     "wordSet": "Colección de palabras",
     "startGame": "Empezar a jugar!",
     "max": "Max. {n}",
+    "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
     "role": {
       "1": {
         "name": "Normal",

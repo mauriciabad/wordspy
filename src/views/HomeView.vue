@@ -81,6 +81,9 @@ const url = computed<string>(() => {
         class="qr"
         width="100%"
       />
+      <span class="field__label field__label--subtitle">{{
+        t('ui2.qrDescription')
+      }}</span>
 
       <div>
         <label class="fiel">
@@ -146,12 +149,17 @@ const url = computed<string>(() => {
     display: block;
     margin-top: 0.5rem;
     margin-left: 0.25rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
     text-align: center;
 
     &--subtitle {
       margin-top: -0.5rem;
       color: #999;
+      font-size: 1rem;
+    }
+
+    &--desc {
+      font-size: 1rem;
     }
   }
 
@@ -199,7 +207,7 @@ const url = computed<string>(() => {
 
 .qr {
   width: 100%;
-  max-width: calc(100vh - 33rem);
+  max-width: calc(100vh - 34.5rem);
   height: unset;
 }
 </style>
