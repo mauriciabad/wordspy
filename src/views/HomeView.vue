@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { RouterLink, useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
+import Selector from '@/components/Selector.vue'
 import { ref } from 'vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
@@ -13,10 +14,10 @@ const router = useRouter()
 
 const gameRound = useStorage<number | undefined>('gameRound', 1)
 const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
-const wordSetId = useStorage<number | undefined>('wordSetId', 2)
-const { getWordSet } = useWordTranslations()
+const wordSetId = useStorage<number>('wordSetId', 6)
+const { getWordSet, wordSets } = useWordTranslations()
 
-console.log(getWordSet(2))
+const wordSetOptions = wordSets.map((ws) => ({ name: ws.name, value: ws.id }))
 
 function handleCreateGame() {
   const wordSet = getWordSet(wordSetId.value ?? 2)
@@ -80,15 +81,11 @@ function handleCreateGame() {
 
         <label class="fiel">
           <span class="field__label">{{ t('ui2.wordSet') }}</span>
-          <span class="field__label field__label--subtitle">6 & 15</span>
-          <input
+
+          <Selector
             v-model="wordSetId"
-            class="field__input"
-            type="number"
-            required
-            max="999999"
-            min="0"
-            step="1"
+            :options="wordSetOptions"
+            class="field__select"
           />
         </label>
       </div>
@@ -125,9 +122,13 @@ function handleCreateGame() {
     }
   }
 
+  &__select {
+    max-width: 12rem;
+  }
+
   &__input {
     display: block;
-    width: 7ch;
+    width: 12rem;
     padding: 0.125rem;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
