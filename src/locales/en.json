@@ -4,10 +4,19 @@
     "gameRound": "Game round number",
     "playerNumber": "Player number",
     "wordSet": "Word set",
-    "role": {
-      "potato": "Normal",
-      "beetroot": "Spy",
-      "rottenTurnip": "Chaos"
+    "roles": {
+      "1": {
+        "name": "Normal",
+        "description": "Eliminate the Spys"
+      },
+      "2": {
+        "name": "Spy",
+        "description": "Don't get eliminated.\nPretend you know the sectret word."
+      },
+      "3": {
+        "name": "Chaos",
+        "description": "Get eliminated.\nSay unrelated words to get elimiated. But if it's too obious they won't eliminate you."
+      }
     }
   },
   "wordSets": {

@@ -5,9 +5,18 @@
     "playerNumber": "Nº de jugador",
     "wordSet": "Colección de palabras",
     "role": {
-      "potato": "Normal",
-      "beetroot": "Espia",
-      "rottenTurnip": "Cahos"
+      "1": {
+        "name": "Normal",
+        "description": "Elimina los espias"
+      },
+      "2": {
+        "name": "Espia",
+        "description": "No seas eliminado.\nIntenta aparentar que sabes la palabra secreta."
+      },
+      "3": {
+        "name": "Cahos",
+        "description": "Se eliminado.\nDi palabras no relacionadas para que te eliminen. Pero si son demasiado diferentes no te eliminarán."
+      }
     }
   },
   "wordSets": {
