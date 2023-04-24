@@ -6,20 +6,21 @@ import { ref } from 'vue';
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom';
+import { useStorage } from '@vueuse/core';
 
 const { t } = useI18n()
 const router = useRouter()
 
-const gameRound = ref<number>(Math.round(Math.random() * 100))
-const playerNumber = ref<number>()
-const wordSetId = ref<number>(1)
+const gameRound = useStorage<number|undefined>('gameRound', 1)
+const playerNumber = useStorage<number|undefined>('playerNumber', undefined)
+const wordSetId = useStorage<number|undefined>('wordSetId', 2)
 const {getWordSet} = useWordTranslations()
 
 console.log(getWordSet(2));
 
 function handleCreateGame() {
-  const wordSet = getWordSet(wordSetId.value)
-  const wordId= gameRound.value % wordSet.words.length
+  const wordSet = getWordSet(wordSetId.value ?? 2)
+  const wordId= (gameRound.value ?? 1) % wordSet.words.length
 
   // Fisher-Yates Algorithm
 function shuffle<T>(array:T[], randomGenerator:()=>number) :T[]{
