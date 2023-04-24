@@ -45,6 +45,41 @@
         "29": "Dominó",
         "30": "Capital"
       }
+    },
+    "15": {
+      "name": "Set 15",
+      "words": {
+        "1": "Granada",
+        "2": "Gamusino",
+        "3": "Gorrilla",
+        "4": "Discoteca",
+        "5": "Pirómano",
+        "6": "Prohibido",
+        "7": "Emboscada",
+        "8": "Experimento",
+        "9": "Striptease",
+        "10": "Harén",
+        "11": "Mafia",
+        "12": "Retraso",
+        "13": "Crisis",
+        "14": "Caníbal",
+        "15": "Orgía",
+        "16": "Muñeca",
+        "17": "Humo",
+        "18": "Virgen",
+        "19": "Plaga",
+        "20": "Ojo",
+        "21": "Taco",
+        "22": "Higo",
+        "23": "Globo",
+        "24": "Temperatura",
+        "25": "Eutanasia",
+        "26": "Positivo",
+        "27": "Esposas",
+        "28": "Joker",
+        "29": "Manguera",
+        "30": "Fuga"
+      }
     }
   },
   "ui": {
