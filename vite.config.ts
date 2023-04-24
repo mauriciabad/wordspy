@@ -25,10 +25,10 @@ export default defineConfig({
         'icons/favicon-16x16.png',
       ],
       manifest: {
-        name: 'Werewolf',
+        name: 'Remolacha',
         description:
-          'Play a custom version of the werewolf game without the need of cards',
-        short_name: 'Werewolf',
+          'Play a custom version of the Remolacha game without the need of cards',
+        short_name: 'Remolacha',
         icons: [
           {
             src: '/icons/android-chrome-192x192.png',
