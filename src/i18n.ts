@@ -4,14 +4,13 @@ import flagES from '@/assets/flags/flagES.svg'
 import messages from '@intlify/unplugin-vue-i18n/messages'
 import { createI18n } from 'vue-i18n'
 
-type Locales = 'en' | 'es' | 'ca'
+type Locales = 'en' | 'es'
 
 const i18n = createI18n({
   locale: navigator.language,
   legacy: false,
   fallbackLocale: {
-    ca: ['es'],
-    default: ['en', 'es', 'ca'],
+    default: ['en', 'es'],
   },
   messages,
   fallbackWarn: false,
@@ -25,7 +24,7 @@ export interface LocaleInfo {
 }
 
 export const localesInfo: LocaleInfo[] = [
-  { id: 'ca', name: 'Català', icon: flagCA },
+  // { id: 'ca', name: 'Català', icon: flagCA },
   { id: 'en', name: 'English', icon: flagEN },
   { id: 'es', name: 'Español', icon: flagES },
 ]
