@@ -84,6 +84,16 @@ const url = computed<string>(() => {
 
       <div>
         <label class="fiel">
+          <span class="field__label">{{ t('ui2.wordSet') }}</span>
+
+          <Selector
+            v-model="wordSetId"
+            :options="wordSetOptions"
+            class="field__select"
+          />
+        </label>
+
+        <label class="fiel">
           <span class="field__label">{{ t('ui2.gameRound') }}</span>
           <input
             v-model="gameRound"
@@ -98,6 +108,9 @@ const url = computed<string>(() => {
 
         <label class="fiel">
           <span class="field__label">{{ t('ui2.playerNumber') }}</span>
+          <span class="field__label field__label--subtitle">{{
+            t('ui2.max', 6 + 4 + 1)
+          }}</span>
           <input
             v-model="playerNumber"
             class="field__input"
@@ -108,16 +121,6 @@ const url = computed<string>(() => {
             step="1"
           />
         </label>
-
-        <label class="fiel">
-          <span class="field__label">{{ t('ui2.wordSet') }}</span>
-
-          <Selector
-            v-model="wordSetId"
-            :options="wordSetOptions"
-            class="field__select"
-          />
-        </label>
       </div>
 
       <IconButton
@@ -125,7 +128,7 @@ const url = computed<string>(() => {
         main
         @click="handleCreateGame"
       >
-        <template #icon> <SparklesIcon /> </template>{{ t('ui.createGame') }}
+        <template #icon> <SparklesIcon /> </template>{{ t('ui2.startGame') }}
       </IconButton>
     </div>
   </CustomLayout>

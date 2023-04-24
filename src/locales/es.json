@@ -4,6 +4,8 @@
     "gameRound": "Nº de partida",
     "playerNumber": "Nº de jugador",
     "wordSet": "Colección de palabras",
+    "startGame": "Empezar a jugar!",
+    "max": "Max. {n}",
     "role": {
       "1": {
         "name": "Normal",

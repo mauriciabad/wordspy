@@ -34,6 +34,7 @@ defineProps<{
   display: flex;
   flex: 1;
   flex-direction: column;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
 }

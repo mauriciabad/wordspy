@@ -4,6 +4,8 @@
     "gameRound": "Game round number",
     "playerNumber": "Player number",
     "wordSet": "Word set",
+    "startGame": "Let's play!",
+    "max": "Max. {n}",
     "roles": {
       "1": {
         "name": "Normal",
