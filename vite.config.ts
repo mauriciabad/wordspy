@@ -25,10 +25,10 @@ export default defineConfig({
         'icons/favicon-16x16.png',
       ],
       manifest: {
-        name: 'Remolacha',
+        name: 'Word Spy',
         description:
-          'Play a custom version of the Remolacha game without the need of cards',
-        short_name: 'Remolacha',
+          'Play a custom version of the Word Spy game without the need of cards',
+        short_name: 'Word Spy',
         icons: [
           {
             src: '/icons/android-chrome-192x192.png',
