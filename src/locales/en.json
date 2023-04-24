@@ -5,9 +5,9 @@
     "playerNumber": "Player number",
     "wordSet": "Word set",
     "role": {
-      "potato": "Potato",
-      "rottenTurnip": "Rotten turnip",
-      "beetroot": "Beetroot"
+      "potato": "Normal",
+      "rottenTurnip": "Spy",
+      "beetroot": "Chaos"
     }
   },
   "wordSets": {
