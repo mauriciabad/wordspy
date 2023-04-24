@@ -6,8 +6,8 @@
     "wordSet": "Word set",
     "role": {
       "potato": "Normal",
-      "rottenTurnip": "Spy",
-      "beetroot": "Chaos"
+      "beetroot": "Spy",
+      "rottenTurnip": "Chaos"
     }
   },
   "wordSets": {
@@ -129,7 +129,6 @@
     "tapCharacterExpandsExplanation": "Tap a character or ability to make it larger and show it to other people",
     "clearData": "Clear data"
   },
-
   "characters": {
     "c:werewolf_name": "Werewolf",
     "c:werewolf_description": "During the night, you vote someone to be killed with the other werewolves in secret.",
@@ -158,7 +157,6 @@
     "c:scarecrow_name": "Scarecrow",
     "c:scarecrow_description": "Can't be killed by the werewolves. If they try to kill him, his death won't be anounced on the next morning."
   },
-
   "abilities": {
     "a:nothing_name": "Nothing",
     "a:nothing_description": "No ability.",
@@ -203,7 +201,6 @@
     "a:ghost_name": "Ghost",
     "a:ghost_description": "Every night chooses a person to be scared by the storyteller."
   },
-
   "actions": {
     "major-revealed_name": "@:abilities.a:major_name",
     "major-revealed_description": "Is revealed.",

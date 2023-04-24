@@ -5,9 +5,9 @@
     "playerNumber": "Nº de jugador",
     "wordSet": "Colección de palabras",
     "role": {
-      "potato": "Patata",
-      "rottenTurnip": "Nabo podrido",
-      "beetroot": "Remolacha"
+      "potato": "Normal",
+      "beetroot": "Espia",
+      "rottenTurnip": "Cahos"
     }
   },
   "wordSets": {
@@ -129,7 +129,6 @@
     "tapCharacterExpandsExplanation": "Toca un personaje o habilidad para hacerla mas grande y mostrarla a otra gente.",
     "clearData": "Borrar datos"
   },
-
   "characters": {
     "c:werewolf_name": "Hombre lobo",
     "c:werewolf_description": "Durante la noche, votas a que jugador matar junto a los otros hombres lobo en secreto.",
@@ -158,7 +157,6 @@
     "c:scarecrow_name": "Hombre de paja",
     "c:scarecrow_description": "No puede ser matado por los hombres lobo. Si lo intentan matar, su muerte no será anunciada la siguente mañana."
   },
-
   "abilities": {
     "a:nothing_name": "Nada",
     "a:nothing_description": "Nada.",
@@ -203,7 +201,6 @@
     "a:ghost_name": "Ghost",
     "a:ghost_description": "Cada noche, escoje una persona para que el narrador lo asuste."
   },
-
   "actions": {
     "major-revealed_name": "@:abilities.a:major_name",
     "major-revealed_description": "Se presenta.",
