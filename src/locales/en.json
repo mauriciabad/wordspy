@@ -11,26 +11,39 @@
     }
   },
   "wordSets": {
-    "1": {
-      "name": "Aminals set",
+    "6": {
+      "name": "Set 6",
       "words": {
-        "1": "Cat",
-        "2": "Dog",
-        "3": "Elephant",
-        "4": "Lion",
-        "5": "Fish",
-        "6": "Parrot"
-      }
-    },
-    "2": {
-      "name": "Set 2",
-      "words": {
-        "1": "Big",
-        "2": "Thought",
-        "3": "Mana",
-        "4": "Electricity",
-        "5": "Pencil",
-        "6": "Love"
+        "1": "Braces",
+        "2": "Lazy",
+        "3": "Documentary",
+        "4": "Tooth",
+        "5": "Bible",
+        "6": "Oak",
+        "7": "Bittersweet",
+        "8": "Big wheel",
+        "9": "Pedestrian",
+        "10": "Lilac",
+        "11": "Roll",
+        "12": "Colonel",
+        "13": "Pistachio",
+        "14": "Ambulance",
+        "15": "Growl",
+        "16": "Jingle Bell",
+        "17": "Stiker",
+        "18": "Biology",
+        "19": "Anchovy",
+        "20": "Cannelloni",
+        "21": "Humor",
+        "22": "Constellation",
+        "23": "Drainpipe",
+        "24": "Daisy flower",
+        "25": "Locker",
+        "26": "Andalusia",
+        "27": "Fabric",
+        "28": "Recycling",
+        "29": "Domino",
+        "30": "Capital"
       }
     }
   },
