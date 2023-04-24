@@ -10,6 +10,43 @@
       "beetroot": "Remolacha"
     }
   },
+  "wordSets": {
+    "6": {
+      "name": "Set 6",
+      "words": {
+        "1": "Aparato",
+        "2": "Vago",
+        "3": "Documental",
+        "4": "Diente",
+        "5": "Biblia",
+        "6": "Roble",
+        "7": "Agridulce",
+        "8": "Noria",
+        "9": "Peatón",
+        "10": "Lila",
+        "11": "Rollo",
+        "12": "Coronel",
+        "13": "Pistacho",
+        "14": "Ambulancia",
+        "15": "Gruñido",
+        "16": "Cascabel",
+        "17": "Cromo",
+        "18": "Biología",
+        "19": "Boquerón",
+        "20": "Canelón",
+        "21": "Humor",
+        "22": "Constelación",
+        "23": "Desagüe",
+        "24": "Margarita",
+        "25": "Taquilla",
+        "26": "Andalucía",
+        "27": "Tejido",
+        "28": "Reciclaje",
+        "29": "Dominó",
+        "30": "Capital"
+      }
+    }
+  },
   "ui": {
     "storyteller": "Narrador",
     "player": "Jugador | Jugadores",
