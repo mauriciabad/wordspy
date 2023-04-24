@@ -12,7 +12,7 @@
   },
   "wordSets": {
     "6": {
-      "name": "Set 6",
+      "name": "Colección 6",
       "words": {
         "1": "Braces",
         "2": "Lazy",
@@ -44,6 +44,41 @@
         "28": "Recycling",
         "29": "Domino",
         "30": "Capital"
+      }
+    },
+    "15": {
+      "name": "Set 15",
+      "words": {
+        "1": "Grenade",
+        "2": "Unicorn",
+        "3": "Parking attendant",
+        "4": "Disco",
+        "5": "Pyromaniac",
+        "6": "Forbidden",
+        "7": "Ambush",
+        "8": "Experiment",
+        "9": "Striptease",
+        "10": "Harem",
+        "11": "Mafia",
+        "12": "Retardation",
+        "13": "Crisis",
+        "14": "Cannibal",
+        "15": "Orgy",
+        "16": "Doll",
+        "17": "Smoke",
+        "18": "Virgin",
+        "19": "Plague",
+        "20": "Eye",
+        "21": "Swear word",
+        "22": "Fig",
+        "23": "Balloon",
+        "24": "Temperature",
+        "25": "Euthanasia",
+        "26": "Positive",
+        "27": "Handcuffs",
+        "28": "Joker",
+        "29": "Hose",
+        "30": "Leak"
       }
     }
   },
