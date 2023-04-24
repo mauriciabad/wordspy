@@ -1,7 +1,7 @@
 {
   "ui2": {
     "welcomeText": "Word spy",
-    "gameRound": "Game round number",
+    "gameRound": "Round number",
     "playerNumber": "Player number",
     "wordSet": "Word set",
     "startGame": "Let's play!",
