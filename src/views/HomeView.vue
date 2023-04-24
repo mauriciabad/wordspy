@@ -98,9 +98,7 @@ function handleCreateGame() {
         main
         @click="handleCreateGame"
       >
-        <template #icon>
-          <SparklesIcon /> </template
-        >{{ t('ui.createGame') }}
+        <template #icon> <SparklesIcon /> </template>{{ t('ui.createGame') }}
       </IconButton>
     </div>
   </CustomLayout>
