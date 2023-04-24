@@ -1,23 +1,34 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { RouterLink, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
 import Selector from '@/components/Selector.vue'
-import { ref } from 'vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
 import { useStorage } from '@vueuse/core'
+import QrcodeVue from 'qrcode.vue'
+import { computed } from 'vue'
+import { useRouterHelper } from '@/compositions/useRouterHelper'
 
 const { t } = useI18n()
 const router = useRouter()
 
-const gameRound = useStorage<number | undefined>('gameRound', 1)
-const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
-const wordSetId = useStorage<number>('wordSetId', 6)
 const { getWordSet, wordSets } = useWordTranslations()
-
 const wordSetOptions = wordSets.map((ws) => ({ name: ws.name, value: ws.id }))
+
+const { getQueryParam } = useRouterHelper()
+
+const gameRound = useStorage<number | undefined>('gameRound', undefined)
+if (getQueryParam('gameRound'))
+  gameRound.value = Number(getQueryParam('gameRound'))
+
+const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
+if (getQueryParam('playerNumber') === 'empty') playerNumber.value = undefined
+
+const wordSetId = useStorage<number>('wordSetId', wordSetOptions[0].value)
+if (getQueryParam('wordSetId'))
+  wordSetId.value = Number(getQueryParam('wordSetId'))
 
 function handleCreateGame() {
   const wordSet = getWordSet(wordSetId.value ?? 2)
@@ -46,12 +57,31 @@ function handleCreateGame() {
     },
   })
 }
+const url = computed<string>(() => {
+  const url = new URL(`${location.origin}/player`)
+  if (gameRound.value) {
+    url.searchParams.append('gameRound', String(gameRound.value))
+  }
+  url.searchParams.append('wordSetId', String(wordSetId.value))
+  url.searchParams.append('playerNumber', 'empty')
+
+  return url.toString()
+})
 </script>
 
 <template>
   <CustomLayout locale-selector>
     <div class="content">
-      <h1 class="title">{{ t('ui2.welcomeText') }}</h1>
+      <!-- <h1 class="title">{{ t('ui2.welcomeText') }}</h1> -->
+
+      <QrcodeVue
+        render-as="svg"
+        :value="url"
+        :margin="2"
+        class="qr"
+        width="100%"
+      />
+
       <div>
         <label class="fiel">
           <span class="field__label">{{ t('ui2.gameRound') }}</span>
@@ -73,8 +103,8 @@ function handleCreateGame() {
             class="field__input"
             type="number"
             required
-            max="999999"
-            min="0"
+            :max="6 + 4 + 1"
+            min="1"
             step="1"
           />
         </label>
@@ -162,5 +192,11 @@ function handleCreateGame() {
       resize: vertical;
     }
   }
+}
+
+.qr {
+  width: 100%;
+  max-width: calc(100vh - 33rem);
+  height: unset;
 }
 </style>
