@@ -61,6 +61,7 @@ const orderedRoles = [
 
         <label class="fiel">
           <span class="field__label">{{ t('ui2.wordSet') }}</span>
+          <span class="field__label field__label--subtitle">6 & 15</span>
           <input v-model="wordSetId" class="field__input" type="number" required max="999999" min="0" step="1" />
         </label>
       </div>
@@ -88,6 +89,11 @@ const orderedRoles = [
     margin-left: 0.25rem;
     font-size: 1rem;
     text-align: center;
+    
+    &--subtitle {
+      color: #999;
+      margin-top: -0.5rem;
+    }
   }
 
 
