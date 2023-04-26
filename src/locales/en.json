@@ -24,7 +24,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Set 1",
+      "name": "Set 1 - Simple",
       "words": {
         "1": "Diary",
         "2": "noodle",
@@ -59,7 +59,7 @@
       }
     },
     "2": {
-      "name": "Set 2",
+      "name": "Set 2 - Simple",
       "words": {
         "1": "Trunk",
         "2": "cat",
@@ -94,7 +94,7 @@
       }
     },
     "3": {
-      "name": "Set 3",
+      "name": "Set 3 - Simple",
       "words": {
         "1": "Water",
         "2": "Wonderful",
@@ -129,7 +129,7 @@
       }
     },
     "4": {
-      "name": "Set 4",
+      "name": "Set 4 - Complex",
       "words": {
         "1": "Snap",
         "2": "Legend",
@@ -164,7 +164,7 @@
       }
     },
     "5": {
-      "name": "Set 5",
+      "name": "Set 5 - Complex",
       "words": {
         "1": "Grandmother",
         "2": "Government",
@@ -199,7 +199,7 @@
       }
     },
     "6": {
-      "name": "Set 6",
+      "name": "Set 6 - Complex",
       "words": {
         "1": "Braces",
         "2": "Lazy",

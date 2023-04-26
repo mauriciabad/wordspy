@@ -24,7 +24,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Colección 1",
+      "name": "Colección 1 - Simple",
       "words": {
         "1": "Diario",
         "2": "Fideo",
@@ -59,7 +59,7 @@
       }
     },
     "2": {
-      "name": "Colección 2",
+      "name": "Colección 2 - Simple",
       "words": {
         "1": "Baúl",
         "2": "Gata",
@@ -94,7 +94,7 @@
       }
     },
     "3": {
-      "name": "Colección 3",
+      "name": "Colección 3 - Simple",
       "words": {
         "1": "Agua",
         "2": "Maravilla",
@@ -129,7 +129,7 @@
       }
     },
     "4": {
-      "name": "Colección 4",
+      "name": "Colección 4 - Complejo",
       "words": {
         "1": "Siesta",
         "2": "Leyenda",
@@ -164,7 +164,7 @@
       }
     },
     "5": {
-      "name": "Colección 5",
+      "name": "Colección 5 - Complejo",
       "words": {
         "1": "Abuela",
         "2": "Gobierno",
@@ -199,7 +199,7 @@
       }
     },
     "6": {
-      "name": "Colección 6",
+      "name": "Colección 6 - Complejo",
       "words": {
         "1": "Aparato",
         "2": "Vago",
