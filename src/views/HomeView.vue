@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getLocaleInfo } from '@/i18n'
 import { ExclamationIcon } from '@heroicons/vue/outline'
+import { SparklesIcon } from '@heroicons/vue/solid'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
