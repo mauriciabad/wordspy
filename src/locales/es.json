@@ -3,7 +3,7 @@
     "welcomeText": "Espia palabras",
     "gameRound": "Nº de partida",
     "playerNumber": "Nº de jugador",
-    "wordSet": "Colección de palabras",
+    "wordSet": "Colección original de palabras",
     "startGame": "Empezar a jugar!",
     "max": "Max. {n}",
     "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
@@ -24,7 +24,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Colección 1 - Simple",
+      "name": "Colección original 1 - Simple",
       "words": {
         "1": "Diario",
         "2": "Fideo",
@@ -59,7 +59,7 @@
       }
     },
     "2": {
-      "name": "Colección 2 - Simple",
+      "name": "Colección original 2 - Simple",
       "words": {
         "1": "Baúl",
         "2": "Gata",
@@ -94,7 +94,7 @@
       }
     },
     "3": {
-      "name": "Colección 3 - Simple",
+      "name": "Colección original 3 - Simple",
       "words": {
         "1": "Agua",
         "2": "Maravilla",
@@ -129,7 +129,7 @@
       }
     },
     "4": {
-      "name": "Colección 4 - Complejo",
+      "name": "Colección original 4 - Complejo",
       "words": {
         "1": "Siesta",
         "2": "Leyenda",
@@ -164,7 +164,7 @@
       }
     },
     "5": {
-      "name": "Colección 5 - Complejo",
+      "name": "Colección original 5 - Complejo",
       "words": {
         "1": "Abuela",
         "2": "Gobierno",
@@ -199,7 +199,7 @@
       }
     },
     "6": {
-      "name": "Colección 6 - Complejo",
+      "name": "Colección original 6 - Complejo",
       "words": {
         "1": "Aparato",
         "2": "Vago",
@@ -234,7 +234,7 @@
       }
     },
     "12": {
-      "name": "Colección 12 - Picante",
+      "name": "Colección original 12 - Picante",
       "words": {
         "1": "Yoga",
         "2": "Títere",
@@ -268,7 +268,7 @@
         "30": "Puente"
       },
       "13": {
-        "name": "Colección 13 - Picante",
+        "name": "Colección original 13 - Picante",
         "words": {
           "1": "Rabo",
           "2": "Rojo",
@@ -303,7 +303,7 @@
         }
       },
       "14": {
-        "name": "Colección 14 - Picante",
+        "name": "Colección original 14 - Picante",
         "words": {
           "1": "Cubata",
           "2": "Semental",
@@ -338,7 +338,7 @@
         }
       },
       "15": {
-        "name": "Colección 15 - Picante",
+        "name": "Colección original 15 - Picante",
         "words": {
           "1": "Granada",
           "2": "Gamusino",
@@ -373,7 +373,7 @@
         }
       },
       "16": {
-        "name": "Colección 16 - Picante",
+        "name": "Colección original 16 - Picante",
         "words": {
           "1": "Recto",
           "2": "Burra",
@@ -408,7 +408,7 @@
         }
       },
       "17": {
-        "name": "Colección 17 - Picante",
+        "name": "Colección original 17 - Picante",
         "words": {
           "1": "Coger",
           "2": "Ludópata",
@@ -443,7 +443,7 @@
         }
       },
       "18": {
-        "name": "Colección 18 - Picante",
+        "name": "Colección original 18 - Picante",
         "words": {
           "1": "Hucha",
           "2": "Pepino",

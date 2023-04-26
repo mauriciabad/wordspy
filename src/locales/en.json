@@ -24,7 +24,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Set 1 - Simple",
+      "name": "Original set 1 - Simple",
       "words": {
         "1": "Diary",
         "2": "noodle",
@@ -59,7 +59,7 @@
       }
     },
     "2": {
-      "name": "Set 2 - Simple",
+      "name": "Original set 2 - Simple",
       "words": {
         "1": "Trunk",
         "2": "cat",
@@ -94,7 +94,7 @@
       }
     },
     "3": {
-      "name": "Set 3 - Simple",
+      "name": "Original set 3 - Simple",
       "words": {
         "1": "Water",
         "2": "Wonderful",
@@ -129,7 +129,7 @@
       }
     },
     "4": {
-      "name": "Set 4 - Complex",
+      "name": "Original set 4 - Complex",
       "words": {
         "1": "Snap",
         "2": "Legend",
@@ -164,7 +164,7 @@
       }
     },
     "5": {
-      "name": "Set 5 - Complex",
+      "name": "Original set 5 - Complex",
       "words": {
         "1": "Grandmother",
         "2": "Government",
@@ -199,7 +199,7 @@
       }
     },
     "6": {
-      "name": "Set 6 - Complex",
+      "name": "Original set 6 - Complex",
       "words": {
         "1": "Braces",
         "2": "Lazy",
@@ -234,7 +234,7 @@
       }
     },
     "12": {
-      "name": "Set 12 - Hot",
+      "name": "Original set 12 - Hot",
       "words": {
         "1": "Yoga",
         "2": "Puppet",
@@ -269,7 +269,7 @@
       }
     },
     "13": {
-      "name": "Set 13 - Hot",
+      "name": "Original set 13 - Hot",
       "words": {
         "1": "Tail",
         "2": "Red",
@@ -304,7 +304,7 @@
       }
     },
     "14": {
-      "name": "Set 14 - Hot",
+      "name": "Original set 14 - Hot",
       "words": {
         "1": "Cubata",
         "2": "Stallion",
@@ -339,7 +339,7 @@
       }
     },
     "15": {
-      "name": "Set 15 - Hot",
+      "name": "Original set 15 - Hot",
       "words": {
         "1": "Grenade",
         "2": "Unicorn",
@@ -374,7 +374,7 @@
       }
     },
     "16": {
-      "name": "Set 16 - Hot",
+      "name": "Original set 16 - Hot",
       "words": {
         "1": "Straight",
         "2": "donkey",
@@ -409,7 +409,7 @@
       }
     },
     "17": {
-      "name": "Set 17 - Hot",
+      "name": "Original set 17 - Hot",
       "words": {
         "1": "Take",
         "2": "Compulsive gambler",
@@ -444,7 +444,7 @@
       }
     },
     "18": {
-      "name": "Set 18 - Hot",
+      "name": "Original set 18 - Hot",
       "words": {
         "1": "Piggy bank",
         "2": "Cucumber",
