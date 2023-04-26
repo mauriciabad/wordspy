@@ -19,9 +19,9 @@ const hasData = computed<boolean>(
 )
 const { getWordSet } = useWordTranslations()
 
-const wordSet = computed(() => getWordSet(wordSetId ?? 0))
-const word = computed<string | undefined>(
-  () => wordSet.value.words[wordId ?? 0]
+const wordSet = getWordSet(wordSetId ?? 1)
+const word = computed<string | undefined>(() =>
+  !wordId || !wordSet.value ? undefined : wordSet.value.words[wordId]
 )
 </script>
 

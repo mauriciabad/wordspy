@@ -24,7 +24,9 @@ const { t, locale } = useI18n()
 const router = useRouter()
 
 const { getWordSet, wordSets } = useWordTranslations()
-const wordSetOptions = wordSets.map((ws) => ({ name: ws.name, value: ws.id }))
+const wordSetOptions = computed(() =>
+  wordSets.value.map((ws) => ({ name: ws.name, value: ws.id }))
+)
 
 const { getQueryParam } = useRouterHelper()
 
@@ -36,14 +38,16 @@ const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
 if (getQueryParam('playerNumber', ['empty'], true) === 'empty')
   playerNumber.value = undefined
 
-const wordSetId = useStorage<number>('wordSetId', wordSetOptions[0].value)
+const wordSetId = useStorage<number>('wordSetId', wordSetOptions.value[0].value)
 if (getQueryParam('wordSetId', [], true))
   wordSetId.value = getQueryParam('wordSetId', [], true)
 
-const wordSet = computed(() => getWordSet(wordSetId.value))
+const wordSet = getWordSet(wordSetId.value)
 
 function handleCreateGame() {
-  const wordId = (gameRound.value ?? 1) % wordSet.value.words.length
+  if (!gameRound.value || !wordSet.value)
+    throw new Error('error when creating game')
+  const wordId = gameRound.value % wordSet.value.words.length
 
   // Fisher-Yates Algorithm
   function shuffle<T>(array: T[], randomGenerator: () => number): T[] {
@@ -115,7 +119,7 @@ const url = computed<string>(() => {
           <div
             class="best-played"
             v-if="
-            typeof locale === 'string' &&
+            typeof locale === 'string' && wordSet &&
             !(wordSet.bestPlayedWith as string[]).includes(locale)
           "
           >

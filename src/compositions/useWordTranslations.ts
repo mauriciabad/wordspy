@@ -1,5 +1,6 @@
 /* eslint-disable @intlify/vue-i18n/no-dynamic-keys */
 
+import { computed, ref, watch, type ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const wordSetsInfo: Record<number, Pick<WordSet, 'bestPlayedWith'> & {
@@ -58,35 +59,41 @@ const wordSetsInfo: Record<number, Pick<WordSet, 'bestPlayedWith'> & {
     bestPlayedWith: ['es'],
   },
 }
-type LanguageCode = 'es' | 'en'
+type Locale = 'es' | 'en'
 
 export type WordSet = {
   id: number,
   name: string,
   description: string,
-  bestPlayedWith: LanguageCode[]
+  bestPlayedWith: Locale[]
   words: string[],
 }
 
 export function useWordTranslations() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
-  const wordSets: WordSet[] = Object.entries(wordSetsInfo).map(([wordSetId, info]) => ({
-    id: Number(wordSetId),
-    name: t(`wordSets.${wordSetId}.name`),
-    description: t(`wordSets.${wordSetId}.description`),
-    bestPlayedWith: info.bestPlayedWith,
-    words: [...Array(info.totalWords).keys()].map((i) => i + 1).map((wordId) => t(`wordSets.${wordSetId}.words.${wordId}`))
-  }))
+  const wordSets = ref<WordSet[]>(getWordsInLang())
+
+  function getWordsInLang(): WordSet[] {
+    return Object.entries(wordSetsInfo).map(([wordSetId, info]) => ({
+      id: Number(wordSetId),
+      name: t(`wordSets.${wordSetId}.name`),
+      description: t(`wordSets.${wordSetId}.description`),
+      bestPlayedWith: info.bestPlayedWith,
+      words: [...Array(info.totalWords).keys()].map((i) => i + 1).map((wordId) => t(`wordSets.${wordSetId}.words.${wordId}`))
+    }))
+  }
+
+  watch(locale, () => {
+    wordSets.value = getWordsInLang()
+  })
 
   function getWord(wordId: number, wordSetId: number): string {
     return t(`wordSets.${wordSetId}.words.${wordId}`)
   }
 
-  function getWordSet(wordSetId: number): WordSet {
-    const wordSet = wordSets.find(({ id }) => id === wordSetId)
-    if (!wordSet) throw new Error("Wrong wordSetId");
-    return wordSet
+  function getWordSet(wordSetId: number): ComputedRef<WordSet | undefined> {
+    return computed(() => wordSets.value.find(({ id }) => id === wordSetId))
   }
 
   return { getWord, getWordSet, wordSets }
