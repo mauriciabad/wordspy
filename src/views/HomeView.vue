@@ -10,6 +10,12 @@ import { useStorage } from '@vueuse/core'
 import QrcodeVue from 'qrcode.vue'
 import { computed } from 'vue'
 import { useRouterHelper } from '@/compositions/useRouterHelper'
+import {
+  CHAOS_ROLE_ID,
+  NORMAL_ROLE_ID,
+  SPY_ROLE_ID,
+  type RoleId,
+} from '@/data/roles'
 
 const { t } = useI18n()
 const router = useRouter()
@@ -20,15 +26,16 @@ const wordSetOptions = wordSets.map((ws) => ({ name: ws.name, value: ws.id }))
 const { getQueryParam } = useRouterHelper()
 
 const gameRound = useStorage<number | undefined>('gameRound', undefined)
-if (getQueryParam('gameRound'))
-  gameRound.value = Number(getQueryParam('gameRound'))
+if ((getQueryParam('gameRound'), undefined, true))
+  gameRound.value = getQueryParam('gameRound', [], true)
 
 const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
-if (getQueryParam('playerNumber') === 'empty') playerNumber.value = undefined
+if (getQueryParam('playerNumber', ['empty'], true) === 'empty')
+  playerNumber.value = undefined
 
 const wordSetId = useStorage<number>('wordSetId', wordSetOptions[0].value)
-if (getQueryParam('wordSetId'))
-  wordSetId.value = Number(getQueryParam('wordSetId'))
+if (getQueryParam('wordSetId', [], true))
+  wordSetId.value = getQueryParam('wordSetId', [], true)
 
 function handleCreateGame() {
   const wordSet = getWordSet(wordSetId.value ?? 2)
@@ -45,8 +52,12 @@ function handleCreateGame() {
   }
 
   const randomGenerator = seedrandom(`${gameRound.value}`)
-  const orderedRoles = [...'1'.repeat(6), ...'2'.repeat(4), ...'3'.repeat(1)]
-  const shuffledRoles = shuffle(orderedRoles, randomGenerator)
+  const orderedRoles: RoleId[] = [
+    ...Array(6).fill(NORMAL_ROLE_ID),
+    ...Array(4).fill(SPY_ROLE_ID),
+    ...Array(1).fill(CHAOS_ROLE_ID),
+  ]
+  const shuffledRoles: RoleId[] = shuffle(orderedRoles, randomGenerator)
 
   router.push({
     name: 'game',

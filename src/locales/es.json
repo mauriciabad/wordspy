@@ -8,15 +8,15 @@
     "max": "Max. {n}",
     "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
     "role": {
-      "1": {
+      "normal": {
         "name": "Normal",
         "description": "Elimina los espias"
       },
-      "2": {
+      "spy": {
         "name": "Espia",
         "description": "No seas eliminado.\nIntenta aparentar que sabes la palabra secreta."
       },
-      "3": {
+      "chaos": {
         "name": "Cahos",
         "description": "Se eliminado.\nDi palabras no relacionadas para que te eliminen. Pero si son demasiado diferentes no te eliminarán."
       }
