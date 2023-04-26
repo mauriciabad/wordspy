@@ -5,6 +5,7 @@
     "playerNumber": "Player number",
     "wordSet": "Word set",
     "startGame": "Let's play!",
+    "wordSetBadLanguage": "This set is best played in",
     "max": "Max. {n}",
     "qrDescription": "Tell others to scan the QR and join faster.",
     "roles": {

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getLocaleInfo } from '@/i18n'
+import { ExclamationIcon } from '@heroicons/vue/outline'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
@@ -17,7 +19,7 @@ import {
   type RoleId,
 } from '@/data/roles'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const router = useRouter()
 
 const { getWordSet, wordSets } = useWordTranslations()
@@ -37,9 +39,10 @@ const wordSetId = useStorage<number>('wordSetId', wordSetOptions[0].value)
 if (getQueryParam('wordSetId', [], true))
   wordSetId.value = getQueryParam('wordSetId', [], true)
 
+const wordSet = computed(() => getWordSet(wordSetId.value))
+
 function handleCreateGame() {
-  const wordSet = getWordSet(wordSetId.value ?? 2)
-  const wordId = (gameRound.value ?? 1) % wordSet.words.length
+  const wordId = (gameRound.value ?? 1) % wordSet.value.words.length
 
   // Fisher-Yates Algorithm
   function shuffle<T>(array: T[], randomGenerator: () => number): T[] {
@@ -106,6 +109,26 @@ const url = computed<string>(() => {
             class="field__select"
           />
         </label>
+
+        <div class="best-played__wrapper">
+          <div
+            class="best-played"
+            v-if="
+            typeof locale === 'string' &&
+            !(wordSet.bestPlayedWith as string[]).includes(locale)
+          "
+          >
+            <ExclamationIcon class="best-played__icon" />
+            <span
+              >{{ t('ui2.wordSetBadLanguage') }}:
+              {{
+                wordSet.bestPlayedWith
+                  .map((lang) => getLocaleInfo(lang).name)
+                  .join(', ')
+              }}</span
+            >
+          </div>
+        </div>
 
         <label class="fiel">
           <span class="field__label">{{ t('ui2.gameRound') }}</span>
@@ -213,6 +236,25 @@ const url = computed<string>(() => {
       min-height: 6rem;
       resize: vertical;
     }
+  }
+}
+
+.best-played {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: solid 2px var(--color-red);
+  border-radius: 0.5rem;
+  color: var(--color-red);
+
+  &__icon {
+    height: 22px;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+  }
+
+  &__wrapper {
+    margin-top: 0.5rem;
+    text-align: center;
   }
 }
 
