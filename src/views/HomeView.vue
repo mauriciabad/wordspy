@@ -203,7 +203,8 @@ const url = computed<string>(() => {
   }
 
   &__select {
-    max-width: 12rem;
+    max-width: 20rem;
+    font-size: 2rem
   }
 
   &__input {
