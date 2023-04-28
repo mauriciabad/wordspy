@@ -5,7 +5,7 @@ import { SparklesIcon } from '@heroicons/vue/solid'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
-import Selector from '@/components/Selector.vue'
+import InputSelector from '@/components/InputSelector.vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
@@ -89,7 +89,7 @@ const url = computed<string>(() => {
 </script>
 
 <template>
-  <CustomLayout locale-selector>
+  <CustomLayout locale-inputselector>
     <div class="content">
       <!-- <h1 class="title">{{ t('ui.welcomeText') }}</h1> -->
 
@@ -109,7 +109,7 @@ const url = computed<string>(() => {
         <label class="fiel" for="wordSet">
           <span class="field__label">{{ t('ui.wordSet') }}</span>
 
-          <Selector
+          <InputSelector
             id="wordSet"
             v-model="wordSetId"
             :options="wordSetOptions"
