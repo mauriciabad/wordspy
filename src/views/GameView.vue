@@ -29,7 +29,7 @@ const word = computed<string | undefined>(() =>
   <CustomLayout locale-selector>
     <template v-if="hasData">
       <h1 class="word">
-        {{ roleId === 'spy' ? {{ t(`ui.hiddenWord`) }} : word }}
+        {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
       </h1>
 
       <h2 class="role" :class="[`role--${roleId}`]">
