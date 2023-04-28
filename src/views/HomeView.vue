@@ -91,7 +91,7 @@ const url = computed<string>(() => {
 <template>
   <CustomLayout locale-selector>
     <div class="content">
-      <!-- <h1 class="title">{{ t('ui2.welcomeText') }}</h1> -->
+      <!-- <h1 class="title">{{ t('ui.welcomeText') }}</h1> -->
 
       <QrcodeVue
         render-as="svg"
@@ -102,12 +102,12 @@ const url = computed<string>(() => {
         width="100%"
       />
       <span class="field__label field__label--subtitle">{{
-        t('ui2.qrDescription')
+        t('ui.qrDescription')
       }}</span>
 
       <div>
         <label class="fiel" for="wordSet">
-          <span class="field__label">{{ t('ui2.wordSet') }}</span>
+          <span class="field__label">{{ t('ui.wordSet') }}</span>
 
           <Selector
             v-model="wordSetId"
@@ -127,7 +127,7 @@ const url = computed<string>(() => {
           >
             <ExclamationIcon class="best-played__icon" />
             <span
-              >{{ t('ui2.wordSetBadLanguage') }}:
+              >{{ t('ui.wordSetBadLanguage') }}:
               {{
                 wordSet.bestPlayedWith
                   .map((lang) => getLocaleInfo(lang).name)
@@ -138,7 +138,7 @@ const url = computed<string>(() => {
         </div>
 
         <label class="fiel" for="gameRound">
-          <span class="field__label">{{ t('ui2.gameRound') }}</span>
+          <span class="field__label">{{ t('ui.gameRound') }}</span>
           <input
             v-model="gameRound"
             class="field__input"
@@ -152,9 +152,9 @@ const url = computed<string>(() => {
         </label>
 
         <label class="fiel" for="playerNumber">
-          <span class="field__label">{{ t('ui2.playerNumber') }}</span>
+          <span class="field__label">{{ t('ui.playerNumber') }}</span>
           <span class="field__label field__label--subtitle">{{
-            t('ui2.max', 6 + 4 + 1)
+            t('ui.max', 6 + 4 + 1)
           }}</span>
           <input
             v-model="playerNumber"
@@ -174,7 +174,7 @@ const url = computed<string>(() => {
         main
         @click="handleCreateGame"
       >
-        <template #icon> <SparklesIcon /> </template>{{ t('ui2.startGame') }}
+        <template #icon> <SparklesIcon /> </template>{{ t('ui.startGame') }}
       </IconButton>
     </div>
   </CustomLayout>

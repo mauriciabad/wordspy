@@ -31,14 +31,14 @@ const word = computed<string | undefined>(() =>
       <h1 class="word">{{ roleId === 'spy' ? '???' : word }}</h1>
 
       <h2 class="role" :class="[`role--${roleId}`]">
-        {{ t(`ui2.roles.${roleId}.name`) }}
+        {{ t(`ui.roles.${roleId}.name`) }}
       </h2>
-      <p class="description">{{ t(`ui2.roles.${roleId}.description`) }}</p>
+      <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
     </template>
 
     <template v-else>
-      <h1>{{ t('ui2.errors.wrongGameUrl.name') }}</h1>
-      <p>{{ t('ui2.errors.wrongGameUrl.details') }}</p>
+      <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
+      <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
     </template>
   </CustomLayout>
 </template>
