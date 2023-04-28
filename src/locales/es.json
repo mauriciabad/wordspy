@@ -8,7 +8,7 @@
     "wordSetBadLanguage": "Esta coleccion se juega mejor en",
     "max": "Max. {n}",
     "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
-    "role": {
+    "roles": {
       "normal": {
         "name": "Normal",
         "description": "Elimina los espias"
