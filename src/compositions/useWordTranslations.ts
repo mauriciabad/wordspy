@@ -3,9 +3,12 @@
 import { computed, ref, watch, type ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const wordSetsInfo: Record<number, Pick<WordSet, 'bestPlayedWith'> & {
-  totalWords: number,
-}> = {
+const wordSetsInfo: Record<
+  number,
+  Pick<WordSet, 'bestPlayedWith'> & {
+    totalWords: number
+  }
+> = {
   '1': {
     totalWords: 30,
     bestPlayedWith: ['es'],
@@ -62,11 +65,11 @@ const wordSetsInfo: Record<number, Pick<WordSet, 'bestPlayedWith'> & {
 type Locale = 'es' | 'en'
 
 export type WordSet = {
-  id: number,
-  name: string,
-  description: string,
+  id: number
+  name: string
+  description: string
   bestPlayedWith: Locale[]
-  words: string[],
+  words: string[]
 }
 
 export function useWordTranslations() {
@@ -80,7 +83,9 @@ export function useWordTranslations() {
       name: t(`wordSets.${wordSetId}.name`),
       description: t(`wordSets.${wordSetId}.description`),
       bestPlayedWith: info.bestPlayedWith,
-      words: [...Array(info.totalWords).keys()].map((i) => i + 1).map((wordId) => t(`wordSets.${wordSetId}.words.${wordId}`))
+      words: [...Array(info.totalWords).keys()]
+        .map((i) => i + 1)
+        .map((wordId) => t(`wordSets.${wordSetId}.words.${wordId}`)),
     }))
   }
 

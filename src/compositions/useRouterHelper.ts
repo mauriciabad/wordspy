@@ -3,11 +3,28 @@ import { useRoute } from 'vue-router'
 export function useRouterHelper() {
   const route = useRoute()
 
-  function getQueryParam<T extends string | never>(parameterName: string): T | undefined
-  function getQueryParam<T extends string | never>(parameterName: string, allowedStringValues: readonly T[]): T | undefined
-  function getQueryParam<T extends string | never>(parameterName: string, allowedStringValues: readonly T[], canBeNumber: true): T | number | undefined
-  function getQueryParam<T extends string | never>(parameterName: string, allowedStringValues: readonly T[], canBeNumber: false): T | undefined
-  function getQueryParam<T extends string | never>(parameterName: string, allowedStringValues?: readonly T[], canBeNumber: boolean = false): T | number | undefined {
+  function getQueryParam<T extends string | never>(
+    parameterName: string
+  ): T | undefined
+  function getQueryParam<T extends string | never>(
+    parameterName: string,
+    allowedStringValues: readonly T[]
+  ): T | undefined
+  function getQueryParam<T extends string | never>(
+    parameterName: string,
+    allowedStringValues: readonly T[],
+    canBeNumber: true
+  ): T | number | undefined
+  function getQueryParam<T extends string | never>(
+    parameterName: string,
+    allowedStringValues: readonly T[],
+    canBeNumber: false
+  ): T | undefined
+  function getQueryParam<T extends string | never>(
+    parameterName: string,
+    allowedStringValues?: readonly T[],
+    canBeNumber = false
+  ): T | number | undefined {
     const parameter = route.query[parameterName]
     if (parameter === undefined) return undefined
 
@@ -19,7 +36,12 @@ export function useRouterHelper() {
       if (parameter === null) return undefined
       result = parameter
     }
-    if (allowedStringValues !== undefined && !canBeNumber && !(allowedStringValues as readonly string[]).includes(result)) return undefined
+    if (
+      allowedStringValues !== undefined &&
+      !canBeNumber &&
+      !(allowedStringValues as readonly string[]).includes(result)
+    )
+      return undefined
     if (canBeNumber) {
       result = Number(result)
       return isNaN(result) ? undefined : result

@@ -7,7 +7,7 @@ describe('Game view', () => {
     })
 
     it('explain player what to do', () => {
-      cy.contains('Make sure you\'re using the right url')
+      cy.contains("Make sure you're using the right url")
     })
 
     it('shows locale selector', () => {
@@ -18,9 +18,7 @@ describe('Game view', () => {
   describe('scanning a qr code', () => {
     describe('any valid url', () => {
       beforeEach(() => {
-        cy.visit(
-          '/game?roleId=chaos&wordSetId=4&wordId=4'
-        )
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=4')
       })
 
       it('shows locale selector and formats date', () => {
@@ -42,14 +40,11 @@ describe('Game view', () => {
 
         getInputByLabel('Español').select('English')
       })
-
     })
 
     describe('when role is normal', () => {
       beforeEach(() => {
-        cy.visit(
-          '/game?roleId=normal&wordSetId=4&wordId=4'
-        )
+        cy.visit('/game?roleId=normal&wordSetId=4&wordId=4')
       })
 
       it('displays information', () => {
@@ -64,9 +59,7 @@ describe('Game view', () => {
     })
     describe('when role is spy', () => {
       beforeEach(() => {
-        cy.visit(
-          '/game?roleId=spy&wordSetId=4&wordId=4'
-        )
+        cy.visit('/game?roleId=spy&wordSetId=4&wordId=4')
       })
 
       it('displays information', () => {
@@ -76,14 +69,12 @@ describe('Game view', () => {
         // Role name
         cy.contains('Spy')
         // Role description
-        cy.contains('Don\'t get eliminated')
+        cy.contains("Don't get eliminated")
       })
     })
     describe('when role is chaos', () => {
       beforeEach(() => {
-        cy.visit(
-          '/game?roleId=chaos&wordSetId=4&wordId=4'
-        )
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=4')
       })
 
       it('displays information', () => {

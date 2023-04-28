@@ -110,20 +110,20 @@ const url = computed<string>(() => {
           <span class="field__label">{{ t('ui.wordSet') }}</span>
 
           <Selector
+            id="wordSet"
             v-model="wordSetId"
             :options="wordSetOptions"
             class="field__select"
-            id="wordSet"
           />
         </label>
 
         <div class="best-played__wrapper">
           <div
-            class="best-played"
             v-if="
             typeof locale === 'string' && wordSet &&
             !(wordSet.bestPlayedWith as string[]).includes(locale)
           "
+            class="best-played"
           >
             <ExclamationIcon class="best-played__icon" />
             <span
@@ -140,6 +140,7 @@ const url = computed<string>(() => {
         <label class="fiel" for="gameRound">
           <span class="field__label">{{ t('ui.gameRound') }}</span>
           <input
+            id="gameRound"
             v-model="gameRound"
             class="field__input"
             type="number"
@@ -147,7 +148,6 @@ const url = computed<string>(() => {
             max="999999"
             min="0"
             step="1"
-            id="gameRound"
           />
         </label>
 
@@ -157,6 +157,7 @@ const url = computed<string>(() => {
             t('ui.max', 6 + 4 + 1)
           }}</span>
           <input
+            id="playerNumber"
             v-model="playerNumber"
             class="field__input"
             type="number"
@@ -164,7 +165,6 @@ const url = computed<string>(() => {
             :max="6 + 4 + 1"
             min="1"
             step="1"
-            id="playerNumber"
           />
         </label>
       </div>

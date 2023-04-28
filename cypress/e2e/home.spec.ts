@@ -8,7 +8,7 @@ describe('Home view', () => {
 
   it('changing languages', () => {
     // Text is in english by default
-    cy.contains('Let\'s play!')
+    cy.contains("Let's play!")
 
     getInputByLabel('English').select('Español')
 
@@ -31,7 +31,7 @@ describe('Home view', () => {
     getInputByLabel('Round number').type('8724')
     getInputByLabel('Player number').type('2')
 
-    cy.contains('Let\'s play!').click()
+    cy.contains("Let's play!").click()
 
     urlShouldEqual('/game?roleId=spy&wordSetId=4&wordId=24')
   })
@@ -41,7 +41,7 @@ describe('Home view', () => {
     getInputByLabel('Round number').type('8724')
     getInputByLabel('Player number').type('1')
 
-    cy.contains('Let\'s play!').click()
+    cy.contains("Let's play!").click()
 
     urlShouldEqual('/game?roleId=normal&wordSetId=4&wordId=24')
   })
@@ -51,7 +51,7 @@ describe('Home view', () => {
     getInputByLabel('Round number').type('8725')
     getInputByLabel('Player number').type('1')
 
-    cy.contains('Let\'s play!').click()
+    cy.contains("Let's play!").click()
 
     urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=25')
   })

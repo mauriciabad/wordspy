@@ -23,13 +23,13 @@ const inputId = computed<string>(() => props.id ?? 'selector')
     <select
       :id="inputId"
       :value="modelValue"
+      class="selector__input"
       @input="
         emit(
           'update:modelValue',
           Number(($event.target as HTMLSelectElement)?.value)
         )
       "
-      class="selector__input"
     >
       <option
         v-for="option in options"
