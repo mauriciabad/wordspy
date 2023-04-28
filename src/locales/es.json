@@ -21,6 +21,12 @@
         "name": "Cahos",
         "description": "Se eliminado.\nDi palabras no relacionadas para que te eliminen. Pero si son demasiado diferentes no te eliminarán."
       }
+    },
+    "errors": {
+      "wrongGameUrl": {
+        "name": "Url incorrecta",
+        "details": "La información en la url es incorrecta o incompleta para poder jugar. Asegurate de que estás usando la url correcta."
+      }
     }
   },
   "wordSets": {

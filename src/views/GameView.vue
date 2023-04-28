@@ -36,7 +36,10 @@ const word = computed<string | undefined>(() =>
       <p class="description">{{ t(`ui2.roles.${roleId}.description`) }}</p>
     </template>
 
-    <template v-else> No data </template>
+    <template v-else> 
+      <h1>{{ t('ui2.errors.wrongGameUrl.name') }}</h1>
+    <p>{{ t('ui2.errors.wrongGameUrl.details') }}</p>
+   </template>
   </CustomLayout>
 </template>
 

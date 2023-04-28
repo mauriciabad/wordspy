@@ -21,6 +21,12 @@
         "name": "Chaos",
         "description": "Get eliminated.\nSay unrelated words to get eliminated. But if it's too obious they won't eliminate you."
       }
+    },
+    "errors": {
+      "wrongGameUrl": {
+        "name": "Wrong url",
+        "details": "The information in the url is incorrect or missing to be able to play. Make sure you're using the right url."
+      }
     }
   },
   "wordSets": {
