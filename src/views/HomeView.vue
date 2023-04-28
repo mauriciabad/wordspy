@@ -106,13 +106,14 @@ const url = computed<string>(() => {
       }}</span>
 
       <div>
-        <label class="fiel">
+        <label class="fiel" for="wordSet">
           <span class="field__label">{{ t('ui2.wordSet') }}</span>
 
           <Selector
             v-model="wordSetId"
             :options="wordSetOptions"
             class="field__select"
+            id="wordSet"
           />
         </label>
 
@@ -136,7 +137,7 @@ const url = computed<string>(() => {
           </div>
         </div>
 
-        <label class="fiel">
+        <label class="fiel" for="gameRound">
           <span class="field__label">{{ t('ui2.gameRound') }}</span>
           <input
             v-model="gameRound"
@@ -146,10 +147,11 @@ const url = computed<string>(() => {
             max="999999"
             min="0"
             step="1"
+            id="gameRound"
           />
         </label>
 
-        <label class="fiel">
+        <label class="fiel" for="playerNumber">
           <span class="field__label">{{ t('ui2.playerNumber') }}</span>
           <span class="field__label field__label--subtitle">{{
             t('ui2.max', 6 + 4 + 1)
@@ -162,6 +164,7 @@ const url = computed<string>(() => {
             :max="6 + 4 + 1"
             min="1"
             step="1"
+            id="playerNumber"
           />
         </label>
       </div>

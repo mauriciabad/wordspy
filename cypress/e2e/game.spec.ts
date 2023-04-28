@@ -91,7 +91,7 @@ describe('Game view', () => {
         cy.contains('Bacterium')
 
         // Role name
-        cy.contains('Normal')
+        cy.contains('Chaos')
         // Role description
         cy.contains('Get eliminated')
       })

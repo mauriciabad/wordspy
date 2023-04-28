@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/vue/solid'
 const props = defineProps<{
   modelValue: number
   options: { value: number; name: string }[]
+  id?: string
 }>()
 
 const emit = defineEmits<{ (e: 'update:modelValue', value: number): void }>()
@@ -12,14 +13,15 @@ const emit = defineEmits<{ (e: 'update:modelValue', value: number): void }>()
 const selectedOption = computed(() =>
   props.options.find((v) => v.value === props.modelValue)
 )
+const inputId = computed<string>(() => props.id ?? 'selector')
 </script>
 
 <template>
-  <label class="selector" for="selector">
+  <label class="selector" :for="inputId">
     <span class="selector__name">{{ selectedOption?.name }}</span>
     <ChevronDownIcon class="selector__arrow" />
     <select
-      id="selector"
+      :id="inputId"
       :value="modelValue"
       @input="
         emit(
