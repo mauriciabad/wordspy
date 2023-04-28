@@ -1,4 +1,3 @@
-import flagCA from '@/assets/flags/flagCA.svg'
 import flagEN from '@/assets/flags/flagEN.svg'
 import flagES from '@/assets/flags/flagES.svg'
 import messages from '@intlify/unplugin-vue-i18n/messages'
@@ -24,7 +23,6 @@ export interface LocaleInfo {
 }
 
 export const localesInfo: LocaleInfo[] = [
-  // { id: 'ca', name: 'Català', icon: flagCA },
   { id: 'en', name: 'English', icon: flagEN },
   { id: 'es', name: 'Español', icon: flagES },
 ]
