@@ -21,18 +21,20 @@ describe('Home view', () => {
   it('shows QR code', () => {
     cy.get(byTestId('qr')).should('be.visible')
   })
-  describe('fills inputs', () => {
-    beforeEach(() => {
-      getInputByLabel('Word set').select('Original set 4 - Complex')
-      getInputByLabel('Round number').type('8724')
-      getInputByLabel('Player number').type('2')
-    })
 
+  it('shows language disclaimer', () => {
+    getInputByLabel('Word set').select('Original set 4 - Complex')
 
-    it('clicking play goes to game page', () => {
-      cy.contains('Let\'s play!').click()
+    cy.contains('This set is best played in').should('be.visible')
+  })
 
-      urlShouldEqual('/game?roleId=spy&wordSetId=4&wordId=24')
-    })
+  it('clicking play goes to game page', () => {
+    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Round number').type('8724')
+    getInputByLabel('Player number').type('2')
+
+    cy.contains('Let\'s play!').click()
+
+    urlShouldEqual('/game?roleId=spy&wordSetId=4&wordId=24')
   })
 })
