@@ -19,13 +19,30 @@ describe('Game view', () => {
     describe('any valid url', () => {
       beforeEach(() => {
         cy.visit(
-          '/game?roleId=normal&wordSetId=4&wordId=4'
+          '/game?roleId=chaos&wordSetId=4&wordId=4'
         )
       })
 
       it('shows locale selector and formats date', () => {
         getInputByLabel('English')
       })
+
+      it('changing languages', () => {
+        // Text is in english by default
+        cy.contains('Bacterium')
+        cy.contains('Chaos')
+        cy.contains('Get eliminated')
+
+        getInputByLabel('English').select('Español')
+
+        // Text is in spanish
+        cy.contains('Bacteria')
+        cy.contains('Cahos')
+        cy.contains('Se eliminado')
+
+        getInputByLabel('Español').select('English')
+      })
+
     })
 
     describe('when role is normal', () => {
@@ -74,7 +91,7 @@ describe('Game view', () => {
         cy.contains('Bacterium')
 
         // Role name
-        cy.contains('Chaos')
+        cy.contains('Normal')
         // Role description
         cy.contains('Get eliminated')
       })

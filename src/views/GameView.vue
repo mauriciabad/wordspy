@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CustomLayout from '@/components/CustomLayout.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
-import { ROLE_IDS, type RoleId } from '@/data/roles'
+import { ROLE_IDS } from '@/data/roles'
 
 const { t } = useI18n()
 
@@ -36,10 +36,10 @@ const word = computed<string | undefined>(() =>
       <p class="description">{{ t(`ui2.roles.${roleId}.description`) }}</p>
     </template>
 
-    <template v-else> 
+    <template v-else>
       <h1>{{ t('ui2.errors.wrongGameUrl.name') }}</h1>
-    <p>{{ t('ui2.errors.wrongGameUrl.details') }}</p>
-   </template>
+      <p>{{ t('ui2.errors.wrongGameUrl.details') }}</p>
+    </template>
   </CustomLayout>
 </template>
 

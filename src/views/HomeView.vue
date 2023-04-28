@@ -98,6 +98,7 @@ const url = computed<string>(() => {
         :value="url"
         :margin="2"
         class="qr"
+        data-test-id="qr"
         width="100%"
       />
       <span class="field__label field__label--subtitle">{{
@@ -204,7 +205,7 @@ const url = computed<string>(() => {
 
   &__select {
     max-width: 30rem;
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
 
   &__input {
