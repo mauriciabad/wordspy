@@ -2,3 +2,5 @@
 node_modules
 dev-dist/
 dist/
+cypress/screenshots/
+cypress/videos/
