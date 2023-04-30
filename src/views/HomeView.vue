@@ -31,7 +31,7 @@ const wordSetOptions = computed(() =>
 const { getQueryParam } = useRouterHelper()
 
 const gameRound = useStorage<number | undefined>('gameRound', undefined)
-if ((getQueryParam('gameRound'), undefined, true))
+if (getQueryParam('gameRound', [], true))
   gameRound.value = getQueryParam('gameRound', [], true)
 
 const playerNumber = useStorage<number | undefined>('playerNumber', undefined)
