@@ -89,7 +89,7 @@ const url = computed<string>(() => {
 </script>
 
 <template>
-  <CustomLayout locale-inputselector>
+  <CustomLayout locale-selector>
     <div class="content">
       <!-- <h1 class="title">{{ t('ui.welcomeText') }}</h1> -->
 
