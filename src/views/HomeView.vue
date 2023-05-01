@@ -104,7 +104,7 @@ const url = computed<string>(() => {
       t('ui.qrDescription')
     }}</span>
 
-    <div>
+    <div class="controls">
       <label class="fiel" for="wordSet">
         <span class="field__label">{{ t('ui.wordSet') }}</span>
 
@@ -115,26 +115,6 @@ const url = computed<string>(() => {
           class="field__select"
         />
       </label>
-
-      <div class="best-played__wrapper">
-        <div
-          v-if="
-            typeof locale === 'string' && wordSet &&
-            !(wordSet.bestPlayedWith as string[]).includes(locale)
-          "
-          class="best-played"
-        >
-          <ExclamationIcon class="best-played__icon" />
-          <span
-            >{{ t('ui.wordSetBadLanguage') }}:
-            {{
-              wordSet.bestPlayedWith
-                .map((lang) => getLocaleInfo(lang).name)
-                .join(', ')
-            }}</span
-          >
-        </div>
-      </div>
 
       <div class="two-columns">
         <label class="fiel field--gameRound" for="gameRound">
@@ -167,6 +147,25 @@ const url = computed<string>(() => {
       </div>
     </div>
 
+    <div class="best-played__wrapper">
+      <div
+        v-if="
+            typeof locale === 'string' && wordSet &&
+            !(wordSet.bestPlayedWith as string[]).includes(locale)
+          "
+        class="best-played"
+      >
+        <ExclamationIcon class="best-played__icon" />
+        <span
+          >{{ t('ui.wordSetBadLanguage') }}:
+          {{
+            wordSet.bestPlayedWith
+              .map((lang) => getLocaleInfo(lang).name)
+              .join(', ')
+          }}</span
+        >
+      </div>
+    </div>
     <IconButton
       :disabled="!playerNumber || !gameRound"
       main
@@ -188,8 +187,8 @@ const url = computed<string>(() => {
   &__label {
     display: block;
     margin: 0.5rem 0 0.5rem 0.25rem;
-    font-size: 1.3rem;
-    line-height: 0.8;
+    font-size: 1.2rem;
+    line-height: 0.85;
     text-align: left;
 
     &--subtitle {
@@ -205,7 +204,7 @@ const url = computed<string>(() => {
 
   &__select {
     width: 100%;
-    max-width: 30rem;
+    max-width: unset;
     padding: 0.75rem 1.25rem;
     font-size: 1.25rem;
   }
@@ -270,14 +269,23 @@ const url = computed<string>(() => {
 
 .qr {
   width: 100%;
-  max-width: calc(100vh - 30rem);
+  max-width: 17rem;
   height: unset;
 }
 
 .two-columns {
   display: grid;
   align-items: end;
+  margin-top: 1rem;
   gap: 1rem;
-  grid-template-columns: auto 5rem;
+
+  grid-template-columns: 2fr minmax(6rem, 1fr);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 }
 </style>
