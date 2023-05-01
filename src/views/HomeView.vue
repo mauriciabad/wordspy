@@ -136,36 +136,35 @@ const url = computed<string>(() => {
         </div>
       </div>
 
-      <label class="fiel" for="gameRound">
-        <span class="field__label">{{ t('ui.gameRound') }}</span>
-        <input
-          id="gameRound"
-          v-model="gameRound"
-          class="field__input"
-          type="number"
-          required
-          max="999999"
-          min="0"
-          step="1"
-        />
-      </label>
+      <div class="two-columns">
+        <label class="fiel field--gameRound" for="gameRound">
+          <span class="field__label">{{ t('ui.gameRound') }}</span>
+          <input
+            id="gameRound"
+            v-model="gameRound"
+            class="field__input"
+            type="number"
+            required
+            max="999999"
+            min="0"
+            step="1"
+          />
+        </label>
 
-      <label class="fiel" for="playerNumber">
-        <span class="field__label">{{ t('ui.playerNumber') }}</span>
-        <span class="field__label field__label--subtitle">{{
-          t('ui.max', 6 + 4 + 1)
-        }}</span>
-        <input
-          id="playerNumber"
-          v-model="playerNumber"
-          class="field__input"
-          type="number"
-          required
-          :max="6 + 4 + 1"
-          min="1"
-          step="1"
-        />
-      </label>
+        <label class="fiel field--playerNumber" for="playerNumber">
+          <span class="field__label">{{ t('ui.playerNumber') }}</span>
+          <input
+            id="playerNumber"
+            v-model="playerNumber"
+            class="field__input"
+            type="number"
+            required
+            :max="6 + 4 + 1"
+            min="1"
+            step="1"
+          />
+        </label>
+      </div>
     </div>
 
     <IconButton
@@ -188,13 +187,13 @@ const url = computed<string>(() => {
 .field {
   &__label {
     display: block;
-    margin-top: 0.5rem;
-    margin-left: 0.25rem;
-    font-size: 1.4rem;
-    text-align: center;
+    margin: 0.5rem 0 0.5rem 0.25rem;
+    font-size: 1.3rem;
+    line-height: 0.8;
+    text-align: left;
 
     &--subtitle {
-      margin-top: -0.5rem;
+      margin-top: 0;
       color: #999;
       font-size: 1rem;
     }
@@ -213,7 +212,7 @@ const url = computed<string>(() => {
 
   &__input {
     display: block;
-    width: 12rem;
+    width: 100%;
     padding: 0.125rem;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
@@ -271,7 +270,14 @@ const url = computed<string>(() => {
 
 .qr {
   width: 100%;
-  max-width: calc(100vh - 34.5rem);
+  max-width: calc(100vh - 30rem);
   height: unset;
+}
+
+.two-columns {
+  display: grid;
+  align-items: end;
+  gap: 1rem;
+  grid-template-columns: auto 5rem;
 }
 </style>

@@ -19,7 +19,7 @@ defineProps<{
 .wrapper {
   display: flex;
   width: 100%;
-  max-width: 40rem;
+  max-width: 34rem;
   min-height: var(--vh100);
   flex-direction: column;
   align-items: center;
@@ -32,11 +32,11 @@ defineProps<{
 
 .content {
   display: flex;
+  width: 100%;
   flex: 1;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 </style>
