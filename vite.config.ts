@@ -27,7 +27,7 @@ export default defineConfig({
       manifest: {
         name: 'Word Spy',
         description:
-          'Play a custom version of the Word Spy game without the need of cards',
+          'Eliminate the spies and don\'t let them find out the secret word.',
         short_name: 'Word Spy',
         icons: [
           {
