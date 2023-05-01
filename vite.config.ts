@@ -27,7 +27,7 @@ export default defineConfig({
       manifest: {
         name: 'Word Spy',
         description:
-          'Eliminate the spies and don\'t let them find out the secret word.',
+          "Eliminate the spies and don't let them find out the secret word.",
         short_name: 'Word Spy',
         icons: [
           {
