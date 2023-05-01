@@ -133,8 +133,12 @@ function generateGameRound(): void {
             min="0"
             step="1"
           />
-          <button class="generate" @click="generateGameRound">
-            <RefreshIcon class="generate__icon" aria-label="Generate" />
+          <button
+            class="generate"
+            :aria-label="t('ui.generate')"
+            @click="generateGameRound"
+          >
+            <RefreshIcon class="generate__icon" />
           </button>
         </label>
 

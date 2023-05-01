@@ -9,6 +9,7 @@
     "max": "Max. {n}",
     "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
     "hiddenWord": "???",
+    "generate": "Generar",
     "roles": {
       "normal": {
         "name": "Normal",
