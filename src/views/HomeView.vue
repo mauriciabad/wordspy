@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getLocaleInfo } from '@/i18n'
-import { ExclamationIcon } from '@heroicons/vue/outline'
+import { ExclamationIcon, RefreshIcon } from '@heroicons/vue/outline'
 import { SparklesIcon } from '@heroicons/vue/solid'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
@@ -86,6 +86,10 @@ const url = computed<string>(() => {
 
   return url.toString()
 })
+
+function generateGameRound(): void {
+  gameRound.value = Math.round(Math.random() * 10000)
+}
 </script>
 
 <template>
@@ -129,6 +133,9 @@ const url = computed<string>(() => {
             min="0"
             step="1"
           />
+          <button class="generate" @click="generateGameRound">
+            <RefreshIcon class="generate__icon" aria-label="Generate" />
+          </button>
         </label>
 
         <label class="fiel field--playerNumber" for="playerNumber">
@@ -184,6 +191,15 @@ const url = computed<string>(() => {
 }
 
 .field {
+  &--gameRound {
+    position: relative;
+
+    > input {
+      height: calc(5rem + 2px);
+      padding-right: calc(5rem + 1px);
+    }
+  }
+
   &__label {
     display: block;
     margin: 0.5rem 0 0.5rem 0.25rem;
@@ -212,7 +228,7 @@ const url = computed<string>(() => {
   &__input {
     display: block;
     width: 100%;
-    padding: 0.125rem;
+    padding: 0.75rem;
     border: 1px solid var(--color-border);
     border-radius: 0.5rem;
     margin: 0 auto;
@@ -220,6 +236,7 @@ const url = computed<string>(() => {
     box-shadow: 0 0 0 0 var(--color-primary);
     color: inherit;
     font-size: 3rem;
+    line-height: 3rem;
     outline: none;
     text-align: center;
     transition: box-shadow 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -286,5 +303,32 @@ const url = computed<string>(() => {
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+}
+
+.generate {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  height: calc(5rem + 2px);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: none;
+  background-color: var(--color-background-soft);
+  box-shadow: 0 0 0 0 var(--color-primary);
+  cursor: pointer;
+  line-height: 1;
+  outline: none;
+  transition: box-shadow 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-primary);
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 </style>
