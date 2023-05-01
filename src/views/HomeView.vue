@@ -208,7 +208,7 @@ function generateGameRound(): void {
     text-align: left;
 
     &--subtitle {
-      margin-top: 0;
+      margin-top: 1rem;
       color: #999;
       font-size: 1rem;
     }
@@ -288,6 +288,10 @@ function generateGameRound(): void {
   width: 100%;
   max-width: 17rem;
   height: unset;
+  border-radius: 0.75rem;
+  @media (prefers-color-scheme: light) {
+    margin: -12px;
+  }
 }
 
 .two-columns {
@@ -329,6 +333,7 @@ function generateGameRound(): void {
   &__icon {
     width: 2rem;
     height: 2rem;
+    color: var(--color-text);
   }
 }
 </style>
