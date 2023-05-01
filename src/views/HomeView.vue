@@ -90,93 +90,91 @@ const url = computed<string>(() => {
 
 <template>
   <CustomLayout locale-selector>
-    <div class="content">
-      <!-- <h1 class="title">{{ t('ui.welcomeText') }}</h1> -->
+    <!-- <h1 class="title">{{ t('ui.welcomeText') }}</h1> -->
 
-      <QrcodeVue
-        render-as="svg"
-        :value="url"
-        :margin="2"
-        class="qr"
-        data-test-id="qr"
-        width="100%"
-      />
-      <span class="field__label field__label--subtitle">{{
-        t('ui.qrDescription')
-      }}</span>
+    <QrcodeVue
+      render-as="svg"
+      :value="url"
+      :margin="2"
+      class="qr"
+      data-test-id="qr"
+      width="100%"
+    />
+    <span class="field__label field__label--subtitle">{{
+      t('ui.qrDescription')
+    }}</span>
 
-      <div>
-        <label class="fiel" for="wordSet">
-          <span class="field__label">{{ t('ui.wordSet') }}</span>
+    <div>
+      <label class="fiel" for="wordSet">
+        <span class="field__label">{{ t('ui.wordSet') }}</span>
 
-          <InputSelector
-            id="wordSet"
-            v-model="wordSetId"
-            :options="wordSetOptions"
-            class="field__select"
-          />
-        </label>
+        <InputSelector
+          id="wordSet"
+          v-model="wordSetId"
+          :options="wordSetOptions"
+          class="field__select"
+        />
+      </label>
 
-        <div class="best-played__wrapper">
-          <div
-            v-if="
+      <div class="best-played__wrapper">
+        <div
+          v-if="
             typeof locale === 'string' && wordSet &&
             !(wordSet.bestPlayedWith as string[]).includes(locale)
           "
-            class="best-played"
+          class="best-played"
+        >
+          <ExclamationIcon class="best-played__icon" />
+          <span
+            >{{ t('ui.wordSetBadLanguage') }}:
+            {{
+              wordSet.bestPlayedWith
+                .map((lang) => getLocaleInfo(lang).name)
+                .join(', ')
+            }}</span
           >
-            <ExclamationIcon class="best-played__icon" />
-            <span
-              >{{ t('ui.wordSetBadLanguage') }}:
-              {{
-                wordSet.bestPlayedWith
-                  .map((lang) => getLocaleInfo(lang).name)
-                  .join(', ')
-              }}</span
-            >
-          </div>
         </div>
-
-        <label class="fiel" for="gameRound">
-          <span class="field__label">{{ t('ui.gameRound') }}</span>
-          <input
-            id="gameRound"
-            v-model="gameRound"
-            class="field__input"
-            type="number"
-            required
-            max="999999"
-            min="0"
-            step="1"
-          />
-        </label>
-
-        <label class="fiel" for="playerNumber">
-          <span class="field__label">{{ t('ui.playerNumber') }}</span>
-          <span class="field__label field__label--subtitle">{{
-            t('ui.max', 6 + 4 + 1)
-          }}</span>
-          <input
-            id="playerNumber"
-            v-model="playerNumber"
-            class="field__input"
-            type="number"
-            required
-            :max="6 + 4 + 1"
-            min="1"
-            step="1"
-          />
-        </label>
       </div>
 
-      <IconButton
-        :disabled="!playerNumber || !gameRound"
-        main
-        @click="handleCreateGame"
-      >
-        <template #icon> <SparklesIcon /> </template>{{ t('ui.startGame') }}
-      </IconButton>
+      <label class="fiel" for="gameRound">
+        <span class="field__label">{{ t('ui.gameRound') }}</span>
+        <input
+          id="gameRound"
+          v-model="gameRound"
+          class="field__input"
+          type="number"
+          required
+          max="999999"
+          min="0"
+          step="1"
+        />
+      </label>
+
+      <label class="fiel" for="playerNumber">
+        <span class="field__label">{{ t('ui.playerNumber') }}</span>
+        <span class="field__label field__label--subtitle">{{
+          t('ui.max', 6 + 4 + 1)
+        }}</span>
+        <input
+          id="playerNumber"
+          v-model="playerNumber"
+          class="field__input"
+          type="number"
+          required
+          :max="6 + 4 + 1"
+          min="1"
+          step="1"
+        />
+      </label>
     </div>
+
+    <IconButton
+      :disabled="!playerNumber || !gameRound"
+      main
+      @click="handleCreateGame"
+    >
+      <template #icon> <SparklesIcon /> </template>{{ t('ui.startGame') }}
+    </IconButton>
   </CustomLayout>
 </template>
 
@@ -207,8 +205,10 @@ const url = computed<string>(() => {
   }
 
   &__select {
+    width: 100%;
     max-width: 30rem;
-    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
   }
 
   &__input {
@@ -263,6 +263,7 @@ const url = computed<string>(() => {
   }
 
   &__wrapper {
+    display: inline-block;
     margin-top: 0.5rem;
     text-align: center;
   }

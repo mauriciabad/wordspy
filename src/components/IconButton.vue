@@ -24,8 +24,8 @@ const emit = defineEmits<{ (e: 'click'): void }>()
   display: inline-block;
   padding: 0.5rem 1.125rem;
   border: 1px solid var(--color-border);
-  background-color: var(--color-background-soft);
   border-radius: 0.5rem;
+  background-color: var(--color-background-soft);
   box-shadow: 0 0 0 0 var(--color-primary);
   cursor: pointer;
   font-size: 1rem;
@@ -43,10 +43,10 @@ const emit = defineEmits<{ (e: 'click'): void }>()
     max-width: calc(var(--max-width, 30rem) + 2rem);
     padding: 1rem 0.5rem;
     border: 0;
-    margin: calc(-1 * var(--main-padding, 1rem));
-    margin-top: 3rem;
-    background-color: var(--color-primary);
     border-radius: 0.5rem 0.5rem 0 0;
+    margin: calc(-1 * var(--main-padding, 1rem));
+    margin-top: 1rem;
+    background-color: var(--color-primary);
     box-shadow: 0 0 16px 0 rgb(0 0 0 / 20%);
     color: #fff;
 
