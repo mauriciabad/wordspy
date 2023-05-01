@@ -46,7 +46,7 @@ describe('Home view', () => {
     urlShouldEqual('/game?roleId=normal&wordSetId=4&wordId=24')
   })
 
-  it('word changes with round', () => {
+  it('word changes with round and chaos', () => {
     getInputByLabel('Word set').select('Original set 4 - Complex')
     getInputByLabel('Round number').type('8725')
     getInputByLabel('Player number').type('1')
@@ -54,5 +54,26 @@ describe('Home view', () => {
     cy.contains("Let's play!").click()
 
     urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=25')
+  })
+
+  it('reload keeps data', () => {
+    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Round number').type('8725')
+    getInputByLabel('Player number').type('1')
+
+    cy.reload()
+
+    getInputByLabel('Word set').should('have.value', '4')
+    getInputByLabel('Round number').should('have.value', '8725')
+    getInputByLabel('Player number').should('have.value', '1')
+  })
+
+  it('generate round number', () => {
+    getInputByLabel('Round number').type('8725')
+
+    cy.get('[aria-label="Generate"]').click()
+
+    getInputByLabel('Round number').should('not.have.value', '8725')
+    getInputByLabel('Round number').should('not.have.value', '')
   })
 })
