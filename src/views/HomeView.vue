@@ -135,6 +135,7 @@ function generateGameRound(): void {
           />
           <button
             class="generate"
+            :title="t('ui.generate')"
             :aria-label="t('ui.generate')"
             @click="generateGameRound"
           >
