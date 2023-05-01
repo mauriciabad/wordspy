@@ -278,7 +278,6 @@ const url = computed<string>(() => {
   align-items: end;
   margin-top: 1rem;
   gap: 1rem;
-
   grid-template-columns: 2fr minmax(6rem, 1fr);
 }
 
