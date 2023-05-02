@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { getLocaleInfo } from '@/i18n'
 import { ExclamationIcon, RefreshIcon } from '@heroicons/vue/outline'
-import { ThumbUpIcon } from '@heroicons/vue/solid'
+import { ThumbUpIcon, QuestionMarkCircleIcon } from '@heroicons/vue/solid'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
 import InputSelector from '@/components/InputSelector.vue'
+import HelpModal from '@/components/HelpModal.vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
 import { useStorage } from '@vueuse/core'
 import QrcodeVue from 'qrcode.vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouterHelper } from '@/compositions/useRouterHelper'
 import {
   CHAOS_ROLE_ID,
@@ -43,6 +44,8 @@ if (getQueryParam('wordSetId', [], true))
   wordSetId.value = getQueryParam('wordSetId', [], true)
 
 const wordSet = getWordSet(wordSetId.value)
+
+const showHelpModal = ref<boolean>(false)
 
 function handleCreateGame() {
   if (!gameRound.value || !wordSet.value)
@@ -107,6 +110,14 @@ function generateGameRound(): void {
     <span class="field__label field__label--subtitle">{{
       t('ui.qrDescription')
     }}</span>
+
+    <div class="help-modal">
+      <IconButton class="button" @click="showHelpModal = true">
+        <template #icon><QuestionMarkCircleIcon /></template>
+        {{ t('ui.help') }}
+      </IconButton>
+      <HelpModal v-model:modelValue="showHelpModal" />
+    </div>
 
     <div class="controls">
       <label class="fiel" for="wordSet">
@@ -339,5 +350,13 @@ function generateGameRound(): void {
     height: 2rem;
     color: var(--color-text);
   }
+}
+
+.help-modal {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 </style>

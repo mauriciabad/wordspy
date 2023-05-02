@@ -9,6 +9,8 @@
     "qrDescription": "Diles a los otros que escaneen el QR para ingresar más rápido.",
     "hiddenWord": "???",
     "generate": "Generar",
+    "close": "Cerrar",
+    "help": "Ayuda",
     "roles": {
       "normal": {
         "name": "Normal",
@@ -486,5 +488,10 @@
         }
       }
     }
+  },
+  "help": {
+    "title": "Ayuda",
+    "appManual": "a",
+    "rules": "b"
   }
 }
