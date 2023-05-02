@@ -14,7 +14,8 @@ const i18n = createI18n({
   messages,
   fallbackWarn: false,
   missingWarn: false,
-  warnHtmlInMessage: false,
+  warnHtmlInMessage: 'off',
+  warnHtmlMessage: true,
 })
 
 export interface LocaleInfo {

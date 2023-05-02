@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { XIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
+import markdownItVue from 'markdown-it-vue'
 import { useI18n } from 'vue-i18n'
 import CustomModal from '@/components/CustomModal.vue'
 import IconButton from '@/components/IconButton.vue'
@@ -13,7 +14,9 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
 }>()
 
-const { t } = useI18n()
+const { t } = useI18n({
+  warnHtmlMessage: false,
+})
 
 const showModal = computed<boolean>({
   get: () => props.modelValue,
@@ -27,10 +30,8 @@ const showModal = computed<boolean>({
   <CustomModal v-model="showModal">
     <template #title>{{ t('help.title') }} </template>
 
-    <!-- eslint-disable-next-line @intlify/vue-i18n/no-v-html vue/no-v-html -->
-    <div v-html="t('help.appManual')" />
-    <!-- eslint-disable-next-line @intlify/vue-i18n/no-v-html vue/no-v-html -->
-    <div v-html="t('help.rules')" />
+    <markdownItVue class="md md--manual" :content="t('help.appManual')" />
+    <markdownItVue class="md md--rules" :content="t('help.rules')" />
 
     <template #footer="{ close }">
       <IconButton @click="close">

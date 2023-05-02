@@ -491,7 +491,7 @@
   },
   "help": {
     "title": "Help",
-    "appManual": "a",
-    "rules": "b"
+    "appManual": "#How to use the app?\nThis app does...",
+    "rules": "#Game rules\nThis are the game rules."
   }
 }
