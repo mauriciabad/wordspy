@@ -14,9 +14,7 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
 }>()
 
-const { t } = useI18n({
-  warnHtmlMessage: false,
-})
+const { t } = useI18n()
 
 const showModal = computed<boolean>({
   get: () => props.modelValue,
