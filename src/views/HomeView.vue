@@ -168,14 +168,13 @@ function generateGameRound(): void {
         class="best-played"
       >
         <ExclamationIcon class="best-played__icon" />
-        <span
-          >{{ t('ui.wordSetBadLanguage') }}:
-          {{
-            wordSet.bestPlayedWith
+        <span>{{
+          t('ui.wordSetBadLanguage', {
+            languages: wordSet.bestPlayedWith
               .map((lang) => getLocaleInfo(lang).name)
-              .join(', ')
-          }}</span
-        >
+              .join(', '),
+          })
+        }}</span>
       </div>
     </div>
     <IconButton
