@@ -54,15 +54,15 @@ const word = computed<string | undefined>(() =>
   margin-top: 3rem;
 
   &--normal {
-    color: lightseagreen;
+    color: var(--color-role-normal);
   }
 
   &--spy {
-    color: royalblue;
+    color: var(--color-role-spy);
   }
 
   &--chaos {
-    color: crimson;
+    color: var(--color-role-chaos);
   }
 }
 </style>

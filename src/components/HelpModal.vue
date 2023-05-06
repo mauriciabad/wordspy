@@ -5,6 +5,7 @@ import Markdown from 'vue3-markdown-it'
 import { useI18n } from 'vue-i18n'
 import CustomModal from '@/components/CustomModal.vue'
 import IconButton from '@/components/IconButton.vue'
+import MarkdownItAttrs from 'markdown-it-attrs'
 
 const props = defineProps<{
   modelValue: boolean
@@ -30,7 +31,11 @@ const showModal = computed<boolean>({
       <h1 class="title">{{ t('help.title') }}</h1>
     </template>
 
-    <Markdown class="md" :source="t('help.content')" />
+    <Markdown
+      class="md"
+      :source="t('help.content')"
+      :plugins="[{ plugin: MarkdownItAttrs }]"
+    />
 
     <template #footer="{ close }">
       <IconButton @click="close">
@@ -52,6 +57,7 @@ const showModal = computed<boolean>({
   h1,
   h2 {
     margin: 1.5rem 0 0;
+    color: var(--color-heading);
     font-size: 1.5rem;
     font-weight: 500;
   }
@@ -60,7 +66,20 @@ const showModal = computed<boolean>({
   h4,
   h5 {
     margin: 0.5rem 0 0;
+    color: var(--color-role-none);
     font-weight: 700;
+  }
+
+  .color-role-normal {
+    color: var(--color-role-normal);
+  }
+
+  .color-role-spy {
+    color: var(--color-role-spy);
+  }
+
+  .color-role-chaos {
+    color: var(--color-role-chaos);
   }
 
   h1 + h1,
