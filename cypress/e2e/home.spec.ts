@@ -114,12 +114,14 @@ describe('Home view from scanned QR', () => {
   it('help dialog', () => {
     // Closed by default
     cy.contains('Rules').should('not.exist')
-    urlShouldEqual('/')
+    urlShouldEqual('/?gameRound=9808&wordSetId=5&playerNumber=empty')
 
     // Opens dialog
     cy.contains('Help').click()
     cy.contains('Rules')
-    urlShouldEqual('/?showHelpModal=true')
+    urlShouldEqual(
+      '/?gameRound=9808&wordSetId=5&playerNumber=empty&showHelpModal=true'
+    )
 
     // Closes dialog
     cy.contains('Close').click()
