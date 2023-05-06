@@ -228,7 +228,7 @@ function generateGameRound(): void {
   &__label {
     display: block;
     margin: 0.5rem 0 0.5rem 0.25rem;
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     line-height: 0.85;
     text-align: left;
 
@@ -247,7 +247,7 @@ function generateGameRound(): void {
     width: 100%;
     max-width: unset;
     padding: 0.75rem 1.25rem;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 
   &__input {
