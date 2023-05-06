@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import LocaleSelector from '@/components/LocaleSelector.vue'
-import { ChevronLeftIcon } from '@heroicons/vue/outline'
-import { useRouter } from 'vue-router'
+import { ChevronLeftIcon, RefreshIcon } from '@heroicons/vue/outline'
+import { useRouter, RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 defineProps<{
   localeSelector?: boolean
+  newGameButton?: boolean
   backButton?: boolean
 }>()
 
@@ -16,13 +17,24 @@ const router = useRouter()
 
 <template>
   <div class="wrapper">
-    <div class="header" :class="{ 'header--no-go-back': !backButton }">
+    <div
+      class="header"
+      :class="{ 'header--no-go-back': !backButton && !newGameButton }"
+    >
       <button v-if="backButton" class="go-back" @click="router.back()">
         <div class="go-back__icon-wrapper">
           <ChevronLeftIcon class="go-back__icon" />
         </div>
         <span class="go-back__text">{{ t('ui.goBack') }}</span>
       </button>
+
+      <RouterLink v-if="newGameButton" class="go-back" :to="{ name: 'home' }">
+        <div class="go-back__icon-wrapper">
+          <RefreshIcon class="go-back__icon" />
+        </div>
+        <span class="go-back__text">{{ t('ui.newGame') }}</span>
+      </RouterLink>
+
       <LocaleSelector v-if="localeSelector" />
     </div>
 
