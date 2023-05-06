@@ -13,7 +13,7 @@ describe('Home view', () => {
     getInputByLabel('English').select('Español')
 
     // Text is in spanish
-    cy.contains('¡Empezar a jugar!')
+    cy.contains('¡A jugar!')
 
     getInputByLabel('Español').select('English')
   })
