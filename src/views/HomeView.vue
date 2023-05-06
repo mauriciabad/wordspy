@@ -60,7 +60,7 @@ watch(showHelpModal, () => {
 })
 
 function handleCreateGame() {
-  if (!gameRound.value || !wordSet.value)
+  if (!gameRound.value || wordSet.value === undefined)
     throw new Error('error when creating game')
   const wordId = gameRound.value % wordSet.value.words.length
 
