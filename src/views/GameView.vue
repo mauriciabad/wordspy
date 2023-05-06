@@ -21,7 +21,9 @@ const { getWordSet } = useWordTranslations()
 
 const wordSet = getWordSet(wordSetId ?? 1)
 const word = computed<string | undefined>(() =>
-  !wordId || !wordSet.value ? undefined : wordSet.value.words[wordId]
+  wordId === undefined || !wordSet.value
+    ? undefined
+    : wordSet.value.words[wordId]
 )
 </script>
 
