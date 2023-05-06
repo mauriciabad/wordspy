@@ -93,3 +93,39 @@ describe('Home view', () => {
     urlShouldEqual('/')
   })
 })
+
+describe('Home view from scanned QR', () => {
+  beforeEach(() => {
+    cy.visit('/?gameRound=9808&wordSetId=5&playerNumber=empty')
+  })
+
+  it('loads data and stores it', () => {
+    getInputByLabel('Word set').should('have.value', '5')
+    getInputByLabel('Round number').should('have.value', '9808')
+    getInputByLabel('Player number').should('have.value', '')
+
+    cy.reload()
+
+    getInputByLabel('Word set').should('have.value', '5')
+    getInputByLabel('Round number').should('have.value', '9808')
+    getInputByLabel('Player number').should('have.value', '')
+  })
+
+  it('help dialog', () => {
+    // Closed by default
+    cy.contains('Rules').should('not.exist')
+    urlShouldEqual('/')
+
+    // Opens dialog
+    cy.contains('Help').click()
+    cy.contains('Rules')
+    urlShouldEqual(
+      '/?gameRound=9808&wordSetId=5&playerNumber=empty&showHelpModal=true'
+    )
+
+    // Closes dialog
+    cy.contains('Close').click()
+    cy.contains('Rules').should('not.exist')
+    urlShouldEqual('/?gameRound=9808&wordSetId=5&playerNumber=empty')
+  })
+})
