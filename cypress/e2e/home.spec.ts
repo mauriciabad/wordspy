@@ -76,4 +76,17 @@ describe('Home view', () => {
     getInputByLabel('Round number').should('not.have.value', '8725')
     getInputByLabel('Round number').should('not.have.value', '')
   })
+
+  it('help dialog', () => {
+    // Closed by default
+    cy.contains('Rules').should('not.exist')
+
+    // Opens dialog
+    cy.contains('Help').click()
+    cy.contains('Rules')
+
+    // Closes dialog
+    cy.contains('Close').click()
+    cy.contains('Rules').should('not.exist')
+  })
 })
