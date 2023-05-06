@@ -83,8 +83,9 @@ export function useWordTranslations() {
       name: t(`wordSets.${wordSetId}.name`),
       description: t(`wordSets.${wordSetId}.description`),
       bestPlayedWith: info.bestPlayedWith,
-      words: [...Array(info.totalWords).keys()]
-        .map((wordId) => t(`wordSets.${wordSetId}.words.${wordId}`)),
+      words: [...Array(info.totalWords).keys()].map((wordId) =>
+        t(`wordSets.${wordSetId}.words.${wordId}`)
+      ),
     }))
   }
 
