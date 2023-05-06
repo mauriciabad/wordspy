@@ -54,6 +54,22 @@ describe('Game view', () => {
       })
     })
 
+    describe('when wordId is 0', () => {
+      beforeEach(() => {
+        cy.visit('/game?roleId=normal&wordSetId=17&wordId=0')
+      })
+
+      it('displays information', () => {
+        // Word
+        cy.contains('Smash')
+
+        // Role name
+        cy.contains('Normal')
+        // Role description
+        cy.contains('Eliminate the Spys')
+      })
+    })
+
     describe('when role is normal', () => {
       beforeEach(() => {
         cy.visit('/game?roleId=normal&wordSetId=4&wordId=2')
