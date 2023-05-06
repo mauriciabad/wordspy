@@ -80,13 +80,16 @@ describe('Home view', () => {
   it('help dialog', () => {
     // Closed by default
     cy.contains('Rules').should('not.exist')
+    urlShouldEqual('/')
 
     // Opens dialog
     cy.contains('Help').click()
     cy.contains('Rules')
+    urlShouldEqual('/?showHelpModal=true')
 
     // Closes dialog
     cy.contains('Close').click()
     cy.contains('Rules').should('not.exist')
+    urlShouldEqual('/')
   })
 })
