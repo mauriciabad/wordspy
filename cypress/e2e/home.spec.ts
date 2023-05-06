@@ -135,13 +135,13 @@ describe('Home view from url with open help dialog', () => {
 
   it('help dialog', () => {
     // Opens dialog
-    cy.contains('Help').click()
     cy.contains('Rules')
     urlShouldEqual('/?showHelpModal=true')
 
     // Closes dialog
     cy.contains('Close').click()
     cy.contains('Rules').should('not.exist')
+    cy.contains('Help')
     urlShouldEqual('/')
   })
 })
