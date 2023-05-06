@@ -35,7 +35,7 @@ describe('Game view', () => {
 
         // Text is in spanish
         cy.contains('Bacteria')
-        cy.contains('Cahos')
+        cy.contains('Caos')
         cy.contains('Se eliminado')
 
         getInputByLabel('Español').select('English')
