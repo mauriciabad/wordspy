@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { XIcon } from '@heroicons/vue/solid'
 import { computed } from 'vue'
-import markdownItVue from 'markdown-it-vue'
+import Markdown from 'vue3-markdown-it'
 import { useI18n } from 'vue-i18n'
 import CustomModal from '@/components/CustomModal.vue'
 import IconButton from '@/components/IconButton.vue'
@@ -28,8 +28,8 @@ const showModal = computed<boolean>({
   <CustomModal v-model="showModal">
     <template #title>{{ t('help.title') }} </template>
 
-    <markdownItVue class="md md--manual" :content="t('help.appManual')" />
-    <markdownItVue class="md md--rules" :content="t('help.rules')" />
+    <Markdown class="md md--manual" :source="t('help.appManual')" />
+    <Markdown class="md md--rules" :source="t('help.rules')" />
 
     <template #footer="{ close }">
       <IconButton @click="close">

@@ -12,7 +12,7 @@ import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
 import { useStorage } from '@vueuse/core'
 import QrcodeVue from 'qrcode.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRouterHelper } from '@/compositions/useRouterHelper'
 import {
   CHAOS_ROLE_ID,
@@ -46,6 +46,18 @@ if (getQueryParam('wordSetId', [], true))
 const wordSet = getWordSet(wordSetId.value)
 
 const showHelpModal = ref<boolean>(false)
+if (getQueryParam('showHelpModal', ['true']) === 'true')
+  showHelpModal.value = true
+
+watch(showHelpModal, () => {
+  router.replace({
+    name: 'home',
+    query: {
+      ...router.currentRoute.value.query,
+      showHelpModal: showHelpModal.value ? 'true' : undefined,
+    },
+  })
+})
 
 function handleCreateGame() {
   if (!gameRound.value || !wordSet.value)

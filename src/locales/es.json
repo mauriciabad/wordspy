@@ -491,7 +491,7 @@
   },
   "help": {
     "title": "Ayuda",
-    "appManual": "#¿Como usar la app?\nEsta app hace...",
-    "rules": "#Reglas del juego\nEsto son las normas del juego."
+    "appManual": "# ¿Como usar la app?\nEsta app hace...",
+    "rules": "# Reglas del juego\nEsto son las normas del juego."
   }
 }
