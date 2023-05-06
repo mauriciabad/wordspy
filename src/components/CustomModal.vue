@@ -57,6 +57,7 @@ function close() {
   position: relative;
   display: flex;
   max-height: 90%;
+  max-width: 50rem;
   flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: 0.25rem;

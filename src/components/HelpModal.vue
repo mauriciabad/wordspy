@@ -26,10 +26,11 @@ const showModal = computed<boolean>({
 
 <template>
   <CustomModal v-model="showModal">
-    <template #title>{{ t('help.title') }} </template>
+    <template #title>
+      <h1 class="title">{{ t('help.title') }}</h1>
+    </template>
 
-    <Markdown class="md md--manual" :source="t('help.appManual')" />
-    <Markdown class="md md--rules" :source="t('help.rules')" />
+    <Markdown class="md" :source="t('help.content')" />
 
     <template #footer="{ close }">
       <IconButton @click="close">
@@ -38,3 +39,71 @@ const showModal = computed<boolean>({
     </template>
   </CustomModal>
 </template>
+
+<style lang="scss">
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.md {
+  text-align: left;
+
+  h1,
+  h2 {
+    margin: 1.5rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  h3,
+  h4,
+  h5 {
+    margin: 0.5rem 0 0;
+    font-weight: 700;
+  }
+
+  h1 + h1,
+  h1 + h2,
+  h1 + h3,
+  h1 + h4,
+  h1 + h5,
+  h2 + h1,
+  h2 + h2,
+  h2 + h3,
+  h2 + h4,
+  h2 + h5,
+  h3 + h1,
+  h3 + h2,
+  h3 + h3,
+  h3 + h4,
+  h3 + h5,
+  h4 + h1,
+  h4 + h2,
+  h4 + h3,
+  h4 + h4,
+  h4 + h5,
+  h5 + h1,
+  h5 + h2,
+  h5 + h3,
+  h5 + h4,
+  h5 + h5,
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+
+  p:not(h1 + p, h2 + p, h3 + p, h4 + p),
+  ol > li {
+    margin: 0.5rem 0 0;
+  }
+}
+</style>
