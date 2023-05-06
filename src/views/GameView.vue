@@ -26,7 +26,7 @@ const word = computed<string | undefined>(() =>
 </script>
 
 <template>
-  <CustomLayout locale-selector>
+  <CustomLayout locale-selector new-game-button>
     <template v-if="hasData">
       <h1 class="word">
         {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}

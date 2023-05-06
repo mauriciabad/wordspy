@@ -13,6 +13,8 @@ const emit = defineEmits<{ (e: 'click'): void }>()
     :class="{ 'link--main': main, 'link--disabled': disabled }"
     :tabindex="disabled ? undefined : 0"
     @click="disabled ? null : emit('click')"
+    @keypress.enter="disabled ? null : emit('click')"
+    @keypress.space="disabled ? null : emit('click')"
   >
     <slot name="icon"></slot>
     <slot></slot>

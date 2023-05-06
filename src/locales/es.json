@@ -11,6 +11,8 @@
     "generate": "Generar",
     "close": "Cerrar",
     "help": "Ayuda",
+    "goBack": "Ir atrás",
+    "newGame": "Nueva partida",
     "roles": {
       "normal": {
         "name": "Normal",
