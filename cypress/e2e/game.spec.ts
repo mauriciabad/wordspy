@@ -1,4 +1,4 @@
-import { getInputByLabel } from '../support/helpers'
+import { getInputByLabel, urlShouldEqual } from '../support/helpers'
 
 describe('Game view', () => {
   describe('without scanning a qr code', () => {
@@ -12,6 +12,12 @@ describe('Game view', () => {
 
     it('shows locale selector', () => {
       getInputByLabel('English')
+    })
+
+    it('New game', () => {
+      cy.contains('New game').click()
+
+      urlShouldEqual('/')
     })
   })
 
@@ -39,6 +45,12 @@ describe('Game view', () => {
         cy.contains('Se eliminado')
 
         getInputByLabel('Español').select('English')
+      })
+
+      it('New game', () => {
+        cy.contains('New game').click()
+
+        urlShouldEqual('/')
       })
     })
 

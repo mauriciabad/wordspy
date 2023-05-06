@@ -13,8 +13,10 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@fontsource/inter": "4.5.15",
     "@heroicons/vue": "1.0.6",
     "@vueuse/core": "9.13.0",
+    "add": "2.0.6",
     "pinia": "2.0.35",
     "qrcode.vue": "3.4.0",
     "vue": "3.2.47",
