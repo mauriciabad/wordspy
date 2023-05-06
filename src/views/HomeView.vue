@@ -123,13 +123,11 @@ function generateGameRound(): void {
       t('ui.qrDescription')
     }}</span>
 
-    <div class="help-modal">
-      <IconButton class="button" @click="showHelpModal = true">
-        <template #icon><QuestionMarkCircleIcon /></template>
-        {{ t('ui.help') }}
-      </IconButton>
-      <HelpModal v-model:modelValue="showHelpModal" />
-    </div>
+    <IconButton class="button button--help-modal" @click="showHelpModal = true">
+      <template #icon><QuestionMarkCircleIcon /></template>
+      {{ t('ui.help') }}
+    </IconButton>
+    <HelpModal v-model:modelValue="showHelpModal" />
 
     <div class="controls">
       <label class="fiel" for="wordSet">
@@ -364,11 +362,7 @@ function generateGameRound(): void {
   }
 }
 
-.help-modal {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
+.button--help-modal {
+  margin-top: 0.5rem;
 }
 </style>
