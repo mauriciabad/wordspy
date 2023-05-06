@@ -11,6 +11,7 @@
     "generate": "Generate",
     "close": "Close",
     "help": "Help",
+    "goBack": "Go back",
     "roles": {
       "normal": {
         "name": "Normal",
