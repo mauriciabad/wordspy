@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { getLocaleInfo } from '@/i18n'
 import { ExclamationIcon, RefreshIcon } from '@heroicons/vue/outline'
-import { ThumbUpIcon } from '@heroicons/vue/solid'
+import { ThumbUpIcon, QuestionMarkCircleIcon } from '@heroicons/vue/solid'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
 import InputSelector from '@/components/InputSelector.vue'
+import HelpModal from '@/components/HelpModal.vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
 import { useStorage } from '@vueuse/core'
 import QrcodeVue from 'qrcode.vue'
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRouterHelper } from '@/compositions/useRouterHelper'
 import {
   CHAOS_ROLE_ID,
@@ -43,6 +44,20 @@ if (getQueryParam('wordSetId', [], true))
   wordSetId.value = getQueryParam('wordSetId', [], true)
 
 const wordSet = getWordSet(wordSetId.value)
+
+const showHelpModal = ref<boolean>(false)
+if (getQueryParam('showHelpModal', ['true']) === 'true')
+  showHelpModal.value = true
+
+watch(showHelpModal, () => {
+  router.replace({
+    name: 'home',
+    query: {
+      ...router.currentRoute.value.query,
+      showHelpModal: showHelpModal.value ? 'true' : undefined,
+    },
+  })
+})
 
 function handleCreateGame() {
   if (!gameRound.value || !wordSet.value)
@@ -108,6 +123,12 @@ function generateGameRound(): void {
       t('ui.qrDescription')
     }}</span>
 
+    <IconButton class="button button--help-modal" @click="showHelpModal = true">
+      <template #icon><QuestionMarkCircleIcon /></template>
+      {{ t('ui.help') }}
+    </IconButton>
+    <HelpModal v-model:modelValue="showHelpModal" />
+
     <div class="controls">
       <label class="fiel" for="wordSet">
         <span class="field__label">{{ t('ui.wordSet') }}</span>
@@ -168,14 +189,13 @@ function generateGameRound(): void {
         class="best-played"
       >
         <ExclamationIcon class="best-played__icon" />
-        <span
-          >{{ t('ui.wordSetBadLanguage') }}:
-          {{
-            wordSet.bestPlayedWith
+        <span>{{
+          t('ui.wordSetBadLanguage', {
+            languages: wordSet.bestPlayedWith
               .map((lang) => getLocaleInfo(lang).name)
-              .join(', ')
-          }}</span
-        >
+              .join(', '),
+          })
+        }}</span>
       </div>
     </div>
     <IconButton
@@ -208,7 +228,7 @@ function generateGameRound(): void {
   &__label {
     display: block;
     margin: 0.5rem 0 0.5rem 0.25rem;
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     line-height: 0.85;
     text-align: left;
 
@@ -227,7 +247,7 @@ function generateGameRound(): void {
     width: 100%;
     max-width: unset;
     padding: 0.75rem 1.25rem;
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 
   &__input {
@@ -340,5 +360,9 @@ function generateGameRound(): void {
     height: 2rem;
     color: var(--color-text);
   }
+}
+
+.button--help-modal {
+  margin-top: 0.5rem;
 }
 </style>
