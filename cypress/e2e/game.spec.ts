@@ -18,7 +18,7 @@ describe('Game view', () => {
   describe('scanning a qr code', () => {
     describe('any valid url', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=4')
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=2')
       })
 
       it('shows locale selector and formats date', () => {
@@ -27,14 +27,14 @@ describe('Game view', () => {
 
       it('changing languages', () => {
         // Text is in english by default
-        cy.contains('Bacterium')
+        cy.contains('Legend')
         cy.contains('Chaos')
         cy.contains('Get eliminated')
 
         getInputByLabel('English').select('Español')
 
         // Text is in spanish
-        cy.contains('Bacteria')
+        cy.contains('Legenda')
         cy.contains('Caos')
         cy.contains('Se eliminado')
 
@@ -44,12 +44,12 @@ describe('Game view', () => {
 
     describe('when role is normal', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=normal&wordSetId=4&wordId=4')
+        cy.visit('/game?roleId=normal&wordSetId=4&wordId=2')
       })
 
       it('displays information', () => {
         // Word
-        cy.contains('Bacterium')
+        cy.contains('Legend')
 
         // Role name
         cy.contains('Normal')
@@ -59,7 +59,7 @@ describe('Game view', () => {
     })
     describe('when role is spy', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=spy&wordSetId=4&wordId=4')
+        cy.visit('/game?roleId=spy&wordSetId=4&wordId=2')
       })
 
       it('displays information', () => {
@@ -74,12 +74,12 @@ describe('Game view', () => {
     })
     describe('when role is chaos', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=4')
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=2')
       })
 
       it('displays information', () => {
         // Word
-        cy.contains('Bacterium')
+        cy.contains('Legend')
 
         // Role name
         cy.contains('Chaos')
