@@ -24,7 +24,7 @@ describe('Game view', () => {
   describe('scanning a qr code', () => {
     describe('any valid url', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=2')
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
       })
 
       it('shows locale selector and formats date', () => {
@@ -72,7 +72,7 @@ describe('Game view', () => {
 
     describe('when role is normal', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=normal&wordSetId=4&wordId=2')
+        cy.visit('/game?roleId=normal&wordSetId=4&wordId=1')
       })
 
       it('displays information', () => {
@@ -87,7 +87,7 @@ describe('Game view', () => {
     })
     describe('when role is spy', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=spy&wordSetId=4&wordId=2')
+        cy.visit('/game?roleId=spy&wordSetId=4&wordId=1')
       })
 
       it('displays information', () => {
@@ -102,7 +102,7 @@ describe('Game view', () => {
     })
     describe('when role is chaos', () => {
       beforeEach(() => {
-        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=2')
+        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
       })
 
       it('displays information', () => {
