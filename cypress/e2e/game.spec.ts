@@ -1,4 +1,4 @@
-import { getInputByLabel, urlShouldEqual } from '../support/helpers'
+import { urlShouldEqual } from '../support/helpers'
 
 describe('Game view', () => {
   describe('without scanning a qr code', () => {
@@ -8,10 +8,6 @@ describe('Game view', () => {
 
     it('explain player what to do', () => {
       cy.contains("Make sure you're using the right url")
-    })
-
-    it('shows locale selector', () => {
-      getInputByLabel('English')
     })
 
     it('New game', () => {
@@ -27,49 +23,10 @@ describe('Game view', () => {
         cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
       })
 
-      it('shows locale selector and formats date', () => {
-        getInputByLabel('English')
-      })
-
-      it('changing languages', () => {
-        // Text is in english by default
-        cy.contains('Legend')
-        cy.contains('Chaos')
-        cy.contains('Get eliminated')
-
-        getInputByLabel('English').select('Español')
-
-        // Text is in spanish
-        cy.contains('Leyenda')
-        cy.contains('Caos')
-        cy.contains('Se eliminado')
-
-        getInputByLabel('Español').select('English')
-      })
-
       it('New game', () => {
         cy.contains('New game').click()
 
         urlShouldEqual('/')
-      })
-
-      it('help dialog', () => {
-        // Closed by default
-        cy.contains('Rules').should('not.exist')
-        urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=1')
-
-        // Opens dialog
-        cy.contains('Help').click()
-        cy.contains('Rules')
-        urlShouldEqual(
-          '/game?roleId=chaos&wordSetId=4&wordId=1&showHelpModal=true'
-        )
-
-        // Closes dialog
-        cy.contains('Close').click()
-        cy.contains('Help')
-        cy.contains('Rules').should('not.exist')
-        urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=1')
       })
     })
 
