@@ -16,7 +16,7 @@ const wordSetId = getQueryParam('wordSetId', [], true)
 const wordId = getQueryParam('wordId', [], true)
 
 const hasData = computed<boolean>(
-  () => wordId !== undefined || wordSetId !== undefined || roleId !== undefined
+  () => wordId !== undefined && wordSetId !== undefined && roleId !== undefined
 )
 const { getWordSet } = useWordTranslations()
 
