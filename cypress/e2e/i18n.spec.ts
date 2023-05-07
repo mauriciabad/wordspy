@@ -1,53 +1,31 @@
 import { getInputByLabel } from '../support/helpers'
 
 describe('Internationalization', () => {
-  describe('from the home view', () => {
-    it('changing languages', () => {
-      cy.visit('/')
+  it('Changes languages', () => {
+    // Home view
+    cy.visit('/')
 
-      // Text is in english by default
-      cy.contains("Let's play!")
+    cy.contains("Let's play!")
+    getInputByLabel('English').select('Español')
+    cy.contains('¡A jugar!')
+    getInputByLabel('Español').select('English')
 
-      getInputByLabel('English').select('Español')
+    // Game view with error
+    cy.visit('/game')
+    getInputByLabel('English')
 
-      // Text is in spanish
-      cy.contains('¡A jugar!')
+    // Game view
+    cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
+    cy.contains('Legend')
+    cy.contains('Chaos')
+    cy.contains('Get eliminated')
 
-      getInputByLabel('Español').select('English')
-    })
-  })
+    getInputByLabel('English').select('Español')
 
-  describe('from the game view', () => {
-    describe('without scanning a qr code', () => {
-      beforeEach(() => {
-        cy.visit('/game')
-      })
+    cy.contains('Leyenda')
+    cy.contains('Caos')
+    cy.contains('Se eliminado')
 
-      it('shows locale selector', () => {
-        getInputByLabel('English')
-      })
-    })
-
-    describe('scanning a qr code', () => {
-      beforeEach(() => {
-        cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
-      })
-
-      it('changing languages', () => {
-        // Text is in english by default
-        cy.contains('Legend')
-        cy.contains('Chaos')
-        cy.contains('Get eliminated')
-
-        getInputByLabel('English').select('Español')
-
-        // Text is in spanish
-        cy.contains('Leyenda')
-        cy.contains('Caos')
-        cy.contains('Se eliminado')
-
-        getInputByLabel('Español').select('English')
-      })
-    })
+    getInputByLabel('Español').select('English')
   })
 })
