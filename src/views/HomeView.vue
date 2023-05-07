@@ -79,10 +79,12 @@ function handleCreateGame() {
 }
 const url = computed<string>(() => {
   const url = new URL(`${location.origin}/`)
-  if (gameRound.value) {
+  if (gameRound.value !== undefined) {
     url.searchParams.append('gameRound', String(gameRound.value))
   }
-  url.searchParams.append('wordSetId', String(wordSetId.value))
+  if (wordSetId.value !== undefined) {
+    url.searchParams.append('wordSetId', String(wordSetId.value))
+  }
   url.searchParams.append('playerNumber', 'empty')
 
   return url.toString()

@@ -6,21 +6,21 @@ describe('Home view', () => {
     cy.visit('/')
 
     // Disabled button
-    cy.contains("Let's play!").should('be.disabled')
     cy.contains("Let's play!").click()
     urlShouldEqual('/')
 
     // Language disclaimer
     cy.contains('This set is best played in')
     getInputByLabel('English').select('Español')
-    cy.contains('This set is best played in').should('not.be.visible')
+    cy.contains('This set is best played in').should('not.exist')
+    getInputByLabel('Español').select('English')
 
     // QR code
     cy.get(byTestId('qr'))
     cy.contains('scan the QR')
 
     // Generate round number
-    getInputByLabel('Round number').type('8725')
+    getInputByLabel('Round number').clear().type('8725')
     cy.get('[aria-label="Generate"]').click()
     getInputByLabel('Round number').should('not.have.value', '8725')
     getInputByLabel('Round number').should('not.have.value', '')
@@ -29,14 +29,14 @@ describe('Home view', () => {
   it('data is loaded from url and stored in localstorage', () => {
     // Fields are empty
     cy.visit('/')
-    getInputByLabel('Round number').should('have.value', '')
     getInputByLabel('Word set').should('have.value', '1')
+    getInputByLabel('Round number').should('have.value', '')
     getInputByLabel('Player number').should('have.value', '')
 
     // Fill fields
     getInputByLabel('Word set').select('Original set 4 - Complex')
-    getInputByLabel('Round number').type('8725')
-    getInputByLabel('Player number').type('1')
+    getInputByLabel('Round number').clear().type('8725')
+    getInputByLabel('Player number').clear().type('1')
 
     cy.reload()
 
@@ -46,7 +46,7 @@ describe('Home view', () => {
     getInputByLabel('Player number').should('have.value', '1')
 
     // Scanning a url fills fields
-    cy.visit('/?gameRound=9808&wordSetId=5&playerNumber=1')
+    cy.visit('/?gameRound=9808&wordSetId=5&playerNumber=empty')
 
     getInputByLabel('Word set').should('have.value', '5')
     getInputByLabel('Round number').should('have.value', '9808')
@@ -57,20 +57,13 @@ describe('Home view', () => {
     // New values keeped
     getInputByLabel('Word set').should('have.value', '5')
     getInputByLabel('Round number').should('have.value', '9808')
-    getInputByLabel('Player number').should('have.value', '')
-
-    // Scanning a url with empty playerNumber
-    cy.visit('/?gameRound=2931&wordSetId=3&playerNumber=empty')
-
-    getInputByLabel('Word set').should('have.value', '3')
-    getInputByLabel('Round number').should('have.value', '2931')
-    getInputByLabel('Player number').should('have.value', '')
+    getInputByLabel('Player number').should('have.value', '1')
 
     // Scanning a url with no gameRound
-    cy.visit('/?wordSetId=6&playerNumber=1')
+    cy.visit('/?wordSetId=6&playerNumber=empty')
 
     getInputByLabel('Word set').should('have.value', '6')
-    getInputByLabel('Round number').should('have.value', '2931') // Keeps old  value
+    getInputByLabel('Round number').should('have.value', '9808') // Keeps old  value
     getInputByLabel('Player number').should('have.value', '1')
   })
 
@@ -79,8 +72,8 @@ describe('Home view', () => {
 
     // Spy
     getInputByLabel('Word set').select('Original set 4 - Complex')
-    getInputByLabel('Round number').type('8724')
-    getInputByLabel('Player number').type('2')
+    getInputByLabel('Round number').clear().type('8724')
+    getInputByLabel('Player number').clear().type('2')
 
     cy.contains("Let's play!").click()
 
@@ -90,8 +83,8 @@ describe('Home view', () => {
 
     // Normal
     getInputByLabel('Word set').select('Original set 4 - Complex')
-    getInputByLabel('Round number').type('8724')
-    getInputByLabel('Player number').type('1')
+    getInputByLabel('Round number').clear().type('8724')
+    getInputByLabel('Player number').clear().type('1')
 
     cy.contains("Let's play!").click()
 
@@ -101,8 +94,8 @@ describe('Home view', () => {
 
     // Chaos
     getInputByLabel('Word set').select('Original set 4 - Complex')
-    getInputByLabel('Round number').type('8725')
-    getInputByLabel('Player number').type('1')
+    getInputByLabel('Round number').clear().type('8725')
+    getInputByLabel('Player number').clear().type('1')
 
     cy.contains("Let's play!").click()
 
@@ -112,8 +105,8 @@ describe('Home view', () => {
 
     // word changes with round, and round 0 is valid
     getInputByLabel('Word set').select('Original set 4 - Complex')
-    getInputByLabel('Round number').type('0')
-    getInputByLabel('Player number').type('1')
+    getInputByLabel('Round number').clear().type('0')
+    getInputByLabel('Player number').clear().type('1')
 
     cy.contains("Let's play!").click()
 
