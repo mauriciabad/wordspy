@@ -74,7 +74,7 @@ describe('Home view', () => {
     getInputByLabel('Player number').should('have.value', '1')
   })
 
-  it('roles', () => {
+  it("Let's play loads right page", () => {
     cy.visit('/')
 
     // Spy
@@ -110,7 +110,7 @@ describe('Home view', () => {
 
     cy.contains('New game').click()
 
-    // word changes with round
+    // word changes with round, and round 0 is valid
     getInputByLabel('Word set').select('Original set 4 - Complex')
     getInputByLabel('Round number').type('0')
     getInputByLabel('Player number').type('1')
