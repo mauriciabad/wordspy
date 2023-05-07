@@ -1,7 +1,7 @@
 import { urlShouldEqual } from '../support/helpers'
 
 describe('Help dialog', () => {
-  describe('from the home view', () => {
+  it('from the home view', () => {
     it('with empty url', () => {
       cy.visit('/')
 
