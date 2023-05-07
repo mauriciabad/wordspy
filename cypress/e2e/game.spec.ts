@@ -52,6 +52,25 @@ describe('Game view', () => {
 
         urlShouldEqual('/')
       })
+
+      it('help dialog', () => {
+        // Closed by default
+        cy.contains('Rules').should('not.exist')
+        urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=1')
+
+        // Opens dialog
+        cy.contains('Help').click()
+        cy.contains('Rules')
+        urlShouldEqual(
+          '/game?roleId=chaos&wordSetId=4&wordId=1&showHelpModal=true'
+        )
+
+        // Closes dialog
+        cy.contains('Close').click()
+        cy.contains('Help')
+        cy.contains('Rules').should('not.exist')
+        urlShouldEqual('/game?roleId=chaos&wordSetId=4&wordId=1')
+      })
     })
 
     describe('when wordId is 0', () => {

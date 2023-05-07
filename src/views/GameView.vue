@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n'
 import CustomLayout from '@/components/CustomLayout.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import { ROLE_IDS } from '@/data/roles'
+import HelpButton from '@/components/HelpButton.vue'
 
 const { t } = useI18n()
 
@@ -29,6 +30,9 @@ const word = computed<string | undefined>(() =>
 
 <template>
   <CustomLayout locale-selector new-game-button>
+    <HelpButton class="help-button" />
+
+    <div style="flex-grow: 1"></div>
     <template v-if="hasData">
       <h1 class="word">
         {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
@@ -44,6 +48,7 @@ const word = computed<string | undefined>(() =>
       <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
       <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
     </template>
+    <div style="flex-grow: 1"></div>
   </CustomLayout>
 </template>
 
@@ -66,5 +71,9 @@ const word = computed<string | undefined>(() =>
   &--chaos {
     color: var(--color-role-chaos);
   }
+}
+
+.help-button {
+  margin-top: -1.5rem;
 }
 </style>
