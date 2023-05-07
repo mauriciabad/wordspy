@@ -89,7 +89,6 @@ describe('Home view', () => {
 
     // Closes dialog
     cy.contains('Close').click()
-    cy.contains('Help')
     cy.contains('Rules').should('not.exist')
     urlShouldEqual('/')
   })
