@@ -1,7 +1,7 @@
-import { urlShouldEqual } from '../../support/helpers'
+import { urlShouldEqual } from '../support/helpers'
 
 describe('Game view', () => {
-  it('Each role shows right data', () => {
+  it('Shows right data', () => {
     // Normal
     cy.visit('/game?roleId=normal&wordSetId=4&wordId=1')
 
