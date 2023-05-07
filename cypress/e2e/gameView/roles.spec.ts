@@ -1,5 +1,5 @@
 describe('Game view roles', () => {
-  describe('when role is normal', () => {
+  it('when role is normal', () => {
     cy.visit('/game?roleId=normal&wordSetId=4&wordId=1')
 
     // Word
