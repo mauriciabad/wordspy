@@ -31,24 +31,23 @@ const word = computed<string | undefined>(() =>
 <template>
   <CustomLayout locale-selector new-game-button>
     <HelpButton class="help-button" />
+    <div class="wrapper">
+      <template v-if="hasData">
+        <h1 class="word">
+          {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
+        </h1>
 
-    <div style="flex-grow: 1"></div>
-    <template v-if="hasData">
-      <h1 class="word">
-        {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
-      </h1>
+        <h2 class="role" :class="[`role--${roleId}`]">
+          {{ t(`ui.roles.${roleId}.name`) }}
+        </h2>
+        <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
+      </template>
 
-      <h2 class="role" :class="[`role--${roleId}`]">
-        {{ t(`ui.roles.${roleId}.name`) }}
-      </h2>
-      <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
-    </template>
-
-    <template v-else>
-      <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
-      <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
-    </template>
-    <div style="flex-grow: 1"></div>
+      <template v-else>
+        <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
+        <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
+      </template>
+    </div>
   </CustomLayout>
 </template>
 
@@ -75,5 +74,13 @@ const word = computed<string | undefined>(() =>
 
 .help-button {
   margin-top: -1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 }
 </style>
