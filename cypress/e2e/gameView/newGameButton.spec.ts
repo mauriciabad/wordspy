@@ -9,7 +9,7 @@ describe('Game view new game button', () => {
     urlShouldEqual('/')
   })
 
-  describe('scanning a qr code has link to new game', () => {
+  it('scanning a qr code has link to new game', () => {
     cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
 
     cy.contains('New game').click()
