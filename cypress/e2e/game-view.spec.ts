@@ -79,7 +79,7 @@ describe('Game view', () => {
     showsError()
   })
 
-  it('link to new game', () => {
+  it('Link to new game', () => {
     // Without scanning a QR code
     cy.visit('/game')
     cy.contains('New game').click()

@@ -97,7 +97,7 @@ export function useWordTranslations() {
     return t(`wordSets.${wordSetId}.words.${wordId}`)
   }
 
-  function getWordSet(wordSetId: number): ComputedRef<WordSet | undefined> {
+  function getWordSet(wordSetId?: number): ComputedRef<WordSet | undefined> {
     return computed(() => wordSets.value.find(({ id }) => id === wordSetId))
   }
 
