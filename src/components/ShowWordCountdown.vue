@@ -79,6 +79,7 @@ const { t } = useI18n()
 
     position: absolute;
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     animation: show-number-opacity 1.66s linear,
