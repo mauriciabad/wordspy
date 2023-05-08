@@ -13,6 +13,13 @@
     "help": "Help",
     "goBack": "Go back",
     "newGame": "New game",
+    "countdown": {
+      "title": "Showing word in...",
+      "3": "3",
+      "2": "2",
+      "1": "1",
+      "0": "Go!"
+    },
     "roles": {
       "normal": {
         "name": "Normal",

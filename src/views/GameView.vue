@@ -6,6 +6,7 @@ import CustomLayout from '@/components/CustomLayout.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import { ROLE_IDS } from '@/data/roles'
 import HelpButton from '@/components/HelpButton.vue'
+import ShowWordCountdown from '@/components/ShowWordCountdown.vue'
 
 const { t } = useI18n()
 
@@ -27,13 +28,15 @@ const word = computed<string | undefined>(() =>
 const hasData = computed<boolean>(
   () => word.value !== undefined && roleId !== undefined
 )
+
+const isTesting = import.meta.env.MODE === 'testing'
 </script>
 
 <template>
   <CustomLayout locale-selector new-game-button>
     <HelpButton class="help-button" />
     <div class="wrapper">
-      <template v-if="hasData">
+      <ShowWordCountdown v-if="hasData" :disabled="isTesting">
         <h1 class="word">
           {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
         </h1>
@@ -42,7 +45,7 @@ const hasData = computed<boolean>(
           {{ t(`ui.roles.${roleId}.name`) }}
         </h2>
         <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
-      </template>
+      </ShowWordCountdown>
 
       <template v-else>
         <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
