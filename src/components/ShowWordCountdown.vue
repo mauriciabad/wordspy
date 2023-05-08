@@ -12,6 +12,7 @@ const { t } = useI18n()
   <div class="wrapper" aria-hidden="true">
     <slot />
     <div v-if="!disabled" class="overlay">
+      <div class="overlay__circle" />
       <h2 class="overlay__title">{{ t('ui.countdown.title') }}</h2>
       <span class="overlay__numbers">
         <span class="overlay__number overlay__number--3">
@@ -22,9 +23,6 @@ const { t } = useI18n()
         </span>
         <span class="overlay__number overlay__number--1">
           {{ t('ui.countdown.1') }}
-        </span>
-        <span class="overlay__number overlay__number--0">
-          {{ t('ui.countdown.0') }}
         </span>
       </span>
     </div>
@@ -47,23 +45,31 @@ const { t } = useI18n()
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: hide-overlay 5.25s ease-in-out;
+  animation: hide-overlay 4.75s ease-in-out;
   background: var(--color-background);
   inset: 0;
   opacity: 0;
   pointer-events: none;
 
-  &::before {
-    position: absolute;
+  &__circle {
+    position: fixed;
     z-index: -1;
-    border-radius: 100%;
-    animation: circle 4s linear;
-    background: var(--color-primary);
-    content: '';
-    inset: calc(50% - 50vmax) calc(50% - 50vmax);
-    opacity: 0.05;
-    transform: scale(0);
-    transform-origin: center center;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+
+    &::before {
+      width: 1vmax;
+      height: 1vmax;
+      border-radius: 100%;
+      animation: circle 4s linear;
+      background: var(--color-primary);
+      content: '';
+      opacity: 0.1;
+      transform: scale(0);
+    }
   }
 
   &__numbers {
@@ -100,14 +106,6 @@ const { t } = useI18n()
     &--1 {
       animation-delay: calc(2 * #{$time-difference} + 0.25s);
     }
-
-    &--0 {
-      animation: show-number-opacity-2 10s ease-out,
-        show-number-scale 1.25s cubic-bezier(0.18, 0.89, 0.46, 1.55);
-      animation-delay: calc(3 * #{$time-difference} + 0.25s);
-      font-size: $number-font-size * 0.33;
-      font-weight: 300;
-    }
   }
 }
 
@@ -115,7 +113,7 @@ const { t } = useI18n()
   0% {
     opacity: 1;
   }
-  #{math.div(4.5, 5.25)*100 + '%'} {
+  #{math.div(4, 4.75)*100 + '%'} {
     opacity: 1;
   }
 
@@ -136,25 +134,11 @@ const { t } = useI18n()
 
 @keyframes circle {
   0% {
-    transform: scale(1);
+    transform: scale(100);
   }
 
   100% {
     transform: scale(0);
-  }
-}
-
-@keyframes show-number-opacity-2 {
-  0% {
-    opacity: 0;
-  }
-
-  #{math.div(0.5, 10)*100 + '%'} {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 
