@@ -77,6 +77,7 @@ const { t } = useI18n()
     overflow: hidden;
     width: 100%;
     height: 10rem;
+    margin-bottom: 8rem;
     font-weight: 200;
     line-height: 1;
   }
