@@ -9,9 +9,9 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div v-if="!disabled" class="wrapper" aria-hidden="true">
+  <div class="wrapper" aria-hidden="true">
     <slot />
-    <div class="overlay">
+    <div v-if="!disabled" class="overlay">
       <h2 class="overlay__title">{{ t('ui.countdown.title') }}</h2>
       <span class="overlay__numbers">
         <span class="overlay__number overlay__number--3">
