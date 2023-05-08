@@ -68,6 +68,7 @@ const { t } = useI18n()
 
   &__numbers {
     position: relative;
+    overflow: hidden;
     width: 100%;
     height: 10rem;
     font-weight: 200;
@@ -79,7 +80,6 @@ const { t } = useI18n()
 
     position: absolute;
     display: flex;
-    overflow: hidden;
     align-items: center;
     justify-content: center;
     animation: show-number-opacity 1.66s linear,
