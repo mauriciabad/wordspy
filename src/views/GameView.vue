@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n'
 import CustomLayout from '@/components/CustomLayout.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import { ROLE_IDS } from '@/data/roles'
+import HelpButton from '@/components/HelpButton.vue'
 
 const { t } = useI18n()
 
@@ -14,36 +15,40 @@ const roleId = getQueryParam('roleId', ROLE_IDS)
 const wordSetId = getQueryParam('wordSetId', [], true)
 const wordId = getQueryParam('wordId', [], true)
 
-const hasData = computed<boolean>(
-  () => wordId !== undefined || wordSetId !== undefined || roleId !== undefined
-)
 const { getWordSet } = useWordTranslations()
 
-const wordSet = getWordSet(wordSetId ?? 1)
+const wordSet = getWordSet(wordSetId)
 const word = computed<string | undefined>(() =>
   wordId === undefined || wordSet.value === undefined
     ? undefined
     : wordSet.value.words[wordId]
 )
+
+const hasData = computed<boolean>(
+  () => word.value !== undefined && roleId !== undefined
+)
 </script>
 
 <template>
   <CustomLayout locale-selector new-game-button>
-    <template v-if="hasData">
-      <h1 class="word">
-        {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
-      </h1>
+    <HelpButton class="help-button" />
+    <div class="wrapper">
+      <template v-if="hasData">
+        <h1 class="word">
+          {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
+        </h1>
 
-      <h2 class="role" :class="[`role--${roleId}`]">
-        {{ t(`ui.roles.${roleId}.name`) }}
-      </h2>
-      <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
-    </template>
+        <h2 class="role" :class="[`role--${roleId}`]">
+          {{ t(`ui.roles.${roleId}.name`) }}
+        </h2>
+        <p class="description">{{ t(`ui.roles.${roleId}.description`) }}</p>
+      </template>
 
-    <template v-else>
-      <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
-      <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
-    </template>
+      <template v-else>
+        <h1>{{ t('ui.errors.wrongGameUrl.name') }}</h1>
+        <p>{{ t('ui.errors.wrongGameUrl.details') }}</p>
+      </template>
+    </div>
   </CustomLayout>
 </template>
 
@@ -66,5 +71,17 @@ const word = computed<string | undefined>(() =>
   &--chaos {
     color: var(--color-role-chaos);
   }
+}
+
+.help-button {
+  margin-top: -1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 }
 </style>
