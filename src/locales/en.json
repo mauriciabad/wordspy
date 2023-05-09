@@ -4,14 +4,18 @@
     "gameRound": "Round number",
     "playerNumber": "Player number",
     "wordSet": "Word set",
+    "words": "Words",
     "startGame": "Let's play!",
     "wordSetBadLanguage": "This set is best played in: {languages}",
+    "wordSetBadLanguageShort": "Prefered languages: {languages}",
     "qrDescription": "Tell others to scan the QR and join faster.",
     "hiddenWord": "???",
     "generate": "Generate",
     "close": "Close",
     "help": "Help",
     "goBack": "Go back",
+    "wordSetDetails": "Word set details",
+    "wordSetDetailsDescription": "These are the word sets avilable.",
     "newGame": "New game",
     "countdown": {
       "title": "Showing word in...",
@@ -44,6 +48,7 @@
   "wordSets": {
     "1": {
       "name": "Original set 1 - Simple",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Diary",
         "1": "Noodle",
@@ -79,6 +84,7 @@
     },
     "2": {
       "name": "Original set 2 - Simple",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Trunk",
         "1": "Cat",
@@ -114,6 +120,7 @@
     },
     "3": {
       "name": "Original set 3 - Simple",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Water",
         "1": "Wonderful",
@@ -149,6 +156,7 @@
     },
     "4": {
       "name": "Original set 4 - Complex",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Siesta",
         "1": "Legend",
@@ -184,6 +192,7 @@
     },
     "5": {
       "name": "Original set 5 - Complex",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Grandmother",
         "1": "Government",
@@ -219,6 +228,7 @@
     },
     "6": {
       "name": "Original set 6 - Complex",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Braces",
         "1": "Lazy",
@@ -254,6 +264,7 @@
     },
     "12": {
       "name": "Original set 12 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Yoga",
         "1": "Puppet",
@@ -289,6 +300,7 @@
     },
     "13": {
       "name": "Original set 13 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Cock",
         "1": "Red",
@@ -324,6 +336,7 @@
     },
     "14": {
       "name": "Original set 14 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Cuba libre",
         "1": "Stallion",
@@ -359,6 +372,7 @@
     },
     "15": {
       "name": "Original set 15 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Grenade",
         "1": "Snipe hunt",
@@ -394,6 +408,7 @@
     },
     "16": {
       "name": "Original set 16 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Rectum",
         "1": "Bonkey",
@@ -429,6 +444,7 @@
     },
     "17": {
       "name": "Original set 17 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Smash",
         "1": "Gambler",
@@ -464,6 +480,7 @@
     },
     "18": {
       "name": "Original set 18 - Hot",
+      "description": "From the board game \"Remolacha\"",
       "words": {
         "0": "Piggy bank",
         "1": "Wiener",

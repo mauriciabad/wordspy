@@ -7,6 +7,7 @@ import { useRouter } from 'vue-router'
 import CustomLayout from '@/components/CustomLayout.vue'
 import InputSelector from '@/components/InputSelector.vue'
 import HelpButton from '@/components/HelpButton.vue'
+import WordSetButton from '@/components/WordSetButton.vue'
 import IconButton from '@/components/IconButton.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import seedrandom from 'seedrandom'
@@ -114,16 +115,20 @@ function generateGameRound(): void {
     <HelpButton class="help-button" />
 
     <div class="controls">
-      <label class="fiel" for="wordSet">
-        <span class="field__label">{{ t('ui.wordSet') }}</span>
+      <div class="field-and-button">
+        <label class="fiel" for="wordSet">
+          <span class="field__label">{{ t('ui.wordSet') }}</span>
 
-        <InputSelector
-          id="wordSet"
-          v-model="wordSetId"
-          :options="wordSetOptions"
-          class="field__select"
-        />
-      </label>
+          <InputSelector
+            id="wordSet"
+            v-model="wordSetId"
+            :options="wordSetOptions"
+            class="field__select"
+          />
+        </label>
+
+        <WordSetButton class="word-set-button" />
+      </div>
 
       <div class="two-columns">
         <label class="fiel field--gameRound" for="gameRound">
@@ -301,6 +306,18 @@ function generateGameRound(): void {
   @media (prefers-color-scheme: light) {
     margin: -12px;
   }
+}
+
+.field-and-button {
+  display: grid;
+  align-items: end;
+  gap: 1rem;
+  grid-template-columns: 1fr auto;
+}
+
+.word-set-button {
+  padding: 0.7rem;
+  line-height: 1;
 }
 
 .two-columns {
