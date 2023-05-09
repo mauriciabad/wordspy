@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CustomModal from '@/components/CustomModal.vue'
 import IconButton from '@/components/IconButton.vue'
+import LocaleSelector from '@/components/LocaleSelector.vue'
 import TagList from '@/components/TagList.vue'
 import { useWordTranslations } from '@/compositions/useWordTranslations'
 import { getLocaleInfo } from '@/i18n'
@@ -60,6 +61,8 @@ const { wordSets } = useWordTranslations()
     </div>
 
     <template #footer="{ close }">
+      <LocaleSelector />
+      <div class="grow" />
       <IconButton @click="close">
         <template #icon> <XIcon /> </template>{{ t('ui.close') }}
       </IconButton>
@@ -111,5 +114,9 @@ h3 {
 
 .desc {
   text-align: center;
+}
+
+.grow {
+  flex-grow: 1;
 }
 </style>
