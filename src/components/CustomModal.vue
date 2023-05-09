@@ -60,7 +60,7 @@ function close() {
   max-height: 90%;
   flex-direction: column;
   border: 1px solid var(--color-border);
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
   margin: 0 1rem;
   background: var(--color-background);
 }
