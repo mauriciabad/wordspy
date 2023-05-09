@@ -46,7 +46,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Complejo 1",
+      "name": "Simple 1",
       "description": "Tarjeta nº 1 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Diario",
@@ -82,7 +82,7 @@
       }
     },
     "2": {
-      "name": "Complejo 2",
+      "name": "Simple 2",
       "description": "Tarjeta nº 2 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Baúl",
@@ -118,7 +118,7 @@
       }
     },
     "3": {
-      "name": "Complejo 3",
+      "name": "Simple 3",
       "description": "Tarjeta nº 3 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Agua",
