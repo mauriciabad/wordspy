@@ -46,7 +46,7 @@
   },
   "wordSets": {
     "1": {
-      "name": "Colección original 1 - Simple",
+      "name": "Complejo 1",
       "description": "Tarjeta nº 1 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Diario",
@@ -82,7 +82,7 @@
       }
     },
     "2": {
-      "name": "Colección original 2 - Simple",
+      "name": "Complejo 2",
       "description": "Tarjeta nº 2 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Baúl",
@@ -118,7 +118,7 @@
       }
     },
     "3": {
-      "name": "Colección original 3 - Simple",
+      "name": "Complejo 3",
       "description": "Tarjeta nº 3 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Agua",
@@ -154,7 +154,7 @@
       }
     },
     "4": {
-      "name": "Colección original 4 - Complejo",
+      "name": "Complejo 1",
       "description": "Tarjeta nº 4 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Siesta",
@@ -190,7 +190,7 @@
       }
     },
     "5": {
-      "name": "Colección original 5 - Complejo",
+      "name": "Complejo 2",
       "description": "Tarjeta nº 5 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Abuela",
@@ -226,7 +226,7 @@
       }
     },
     "6": {
-      "name": "Colección original 6 - Complejo",
+      "name": "Complejo 3",
       "description": "Tarjeta nº 6 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Aparato",
@@ -262,7 +262,7 @@
       }
     },
     "12": {
-      "name": "Colección original 12 - Picante",
+      "name": "Complejo 4",
       "description": "Tarjeta nº 12 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Yoga",
@@ -298,7 +298,7 @@
       }
     },
     "13": {
-      "name": "Colección original 13 - Picante",
+      "name": "Picante 1",
       "description": "Tarjeta nº 13 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Rabo",
@@ -334,7 +334,7 @@
       }
     },
     "14": {
-      "name": "Colección original 14 - Picante",
+      "name": "Picante 2",
       "description": "Tarjeta nº 14 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Cubata",
@@ -370,7 +370,7 @@
       }
     },
     "15": {
-      "name": "Colección original 15 - Picante",
+      "name": "Picante 3",
       "description": "Tarjeta nº 15 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Granada",
@@ -406,7 +406,7 @@
       }
     },
     "16": {
-      "name": "Colección original 16 - Picante",
+      "name": "Picante 4",
       "description": "Tarjeta nº 16 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Recto",
@@ -442,7 +442,7 @@
       }
     },
     "17": {
-      "name": "Colección original 17 - Picante",
+      "name": "Picante 5",
       "description": "Tarjeta nº 17 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Coger",
@@ -478,7 +478,7 @@
       }
     },
     "18": {
-      "name": "Colección original 18 - Picante",
+      "name": "Picante 6",
       "description": "Tarjeta nº 18 del juego de mesa \"Remolacha\".",
       "words": {
         "0": "Hucha",
