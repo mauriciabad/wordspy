@@ -27,7 +27,7 @@ describe('Home view', () => {
   })
 
   it('play with spy', () => {
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').type('8724')
     getInputByLabel('Player number').type('2')
 
@@ -37,7 +37,7 @@ describe('Home view', () => {
   })
 
   it('play with normal', () => {
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').type('8724')
     getInputByLabel('Player number').type('1')
 
@@ -47,7 +47,7 @@ describe('Home view', () => {
   })
 
   it('word changes with round and chaos', () => {
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').type('8725')
     getInputByLabel('Player number').type('1')
 
@@ -57,7 +57,7 @@ describe('Home view', () => {
   })
 
   it('reload keeps data', () => {
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').type('8725')
     getInputByLabel('Player number').type('1')
 
