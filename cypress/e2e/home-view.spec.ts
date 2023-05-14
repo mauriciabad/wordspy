@@ -112,4 +112,27 @@ describe('Home view', () => {
 
     urlShouldEqual('/game?roleId=normal&wordSetId=4&wordId=0')
   })
+
+  it('word set details dialog', () => {
+    cy.visit('/')
+
+    // Closed by default
+    cy.contains('Word set details').should('not.exist')
+
+    // Opens dialog
+    cy.get('[aria-label="Word set details"]').click()
+    cy.contains('Word set details')
+    cy.contains('Simple 1')
+    cy.contains('Hot 6')
+    cy.contains('Set number 1 from the board game "Remolacha".')
+    cy.contains('Español')
+    cy.contains('Diary')
+    cy.contains('Beast')
+    cy.contains('Laughter')
+
+    // Closes dialog
+    cy.contains('Close').click()
+    cy.get('[aria-label="Word set details"]')
+    cy.contains('Word set details').should('not.exist')
+  })
 })
