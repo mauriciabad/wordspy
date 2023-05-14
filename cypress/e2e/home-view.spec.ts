@@ -34,7 +34,7 @@ describe('Home view', () => {
     getInputByLabel('Player number').should('have.value', '')
 
     // Fill fields
-    getInputByLabel('Word set').select('Complex 4')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8725')
     getInputByLabel('Player number').clear().type('1')
 
@@ -71,7 +71,7 @@ describe('Home view', () => {
     cy.visit('/')
 
     // Spy
-    getInputByLabel('Word set').select('Complex 4')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
     getInputByLabel('Player number').clear().type('2')
 
@@ -82,7 +82,7 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // Normal
-    getInputByLabel('Word set').select('Complex 4')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
     getInputByLabel('Player number').clear().type('1')
 
@@ -93,7 +93,7 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // Chaos
-    getInputByLabel('Word set').select('Complex 4')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8725')
     getInputByLabel('Player number').clear().type('1')
 
@@ -104,7 +104,7 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // word changes with round, and round 0 is valid
-    getInputByLabel('Word set').select('Complex 4')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('0')
     getInputByLabel('Player number').clear().type('1')
 
