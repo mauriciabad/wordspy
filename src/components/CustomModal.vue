@@ -56,11 +56,11 @@ function close() {
 .modal-content {
   position: relative;
   display: flex;
-  max-height: 90%;
   max-width: 50rem;
+  max-height: 90%;
   flex-direction: column;
   border: 1px solid var(--color-border);
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
   margin: 0 1rem;
   background: var(--color-background);
 }
@@ -80,7 +80,6 @@ function close() {
     flex-grow: 1;
     padding: 1rem;
     padding-bottom: 0.5rem;
-    text-align: center;
   }
 
   &__action {
