@@ -11,7 +11,8 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           build: npm run build
-          
+          start: npm run preview
+
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
