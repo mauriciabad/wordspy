@@ -1,4 +1,4 @@
-import { getInputByLabel } from '../support/helpers'
+import { byTestId, getInputByLabel } from '../support/helpers'
 
 describe('Internationalization', () => {
   it('Changes languages', () => {
@@ -23,7 +23,9 @@ describe('Internationalization', () => {
     cy.contains('Beast')
     cy.contains('Laughter')
 
-    getInputByLabel('English').select('Español')
+    getInputByLabel('English', cy.get(byTestId('word-set-modal'))).select(
+      'Español'
+    )
 
     cy.contains('Detalles sobre las colecciones de palabras')
     cy.contains('Simple 1')

@@ -2,12 +2,15 @@ export function byTestId<T extends string>(testId: T): `[data-test-id="${T}"]` {
   return `[data-test-id="${testId}"]`
 }
 
-export function getInputByLabel(label: string) {
-  return cy
+export function getInputByLabel<Node extends HTMLElement>(
+  label: string,
+  cy2: Cypress.Chainable<JQuery<Node>> = cy.root()
+) {
+  return cy2
     .contains(label)
     .invoke('attr', 'for')
     .then((id) => {
-      cy.get(`#${id}`)
+      cy2.get(`#${id}`)
     })
 }
 
