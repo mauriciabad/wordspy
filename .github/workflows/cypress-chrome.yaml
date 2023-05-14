@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: End-to-end tests (Chrome)
 on: push
 jobs:
   cypress-run:
@@ -12,6 +12,7 @@ jobs:
         with:
           build: npm run build
           start: npm run preview
+          browser: chrome
 
       - uses: actions/upload-artifact@v3
         if: failure()
