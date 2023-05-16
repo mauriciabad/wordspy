@@ -1,4 +1,4 @@
-import { byTestId, urlShouldEqual } from '../support/helpers'
+import { byAriaLabel, byTestId, urlShouldEqual } from '../support/helpers'
 import { getInputByLabel } from '../support/helpers'
 
 describe('Home view', () => {
@@ -21,7 +21,7 @@ describe('Home view', () => {
 
     // Generate round number
     getInputByLabel('Round number').clear().type('8725')
-    cy.get('[aria-label="Generate"]').click()
+    cy.get(byAriaLabel('Generate')).click()
     getInputByLabel('Round number').should('not.have.value', '8725')
     getInputByLabel('Round number').should('not.have.value', '')
   })
@@ -34,7 +34,7 @@ describe('Home view', () => {
     getInputByLabel('Player number').should('have.value', '')
 
     // Fill fields
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8725')
     getInputByLabel('Player number').clear().type('1')
 
@@ -71,7 +71,7 @@ describe('Home view', () => {
     cy.visit('/')
 
     // Spy
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
     getInputByLabel('Player number').clear().type('2')
 
@@ -82,7 +82,7 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // Normal
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
     getInputByLabel('Player number').clear().type('1')
 
@@ -93,7 +93,7 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // Chaos
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8725')
     getInputByLabel('Player number').clear().type('1')
 
@@ -104,12 +104,35 @@ describe('Home view', () => {
     cy.contains('New game').click()
 
     // word changes with round, and round 0 is valid
-    getInputByLabel('Word set').select('Original set 4 - Complex')
+    getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('0')
     getInputByLabel('Player number').clear().type('1')
 
     cy.contains("Let's play!").click()
 
     urlShouldEqual('/game?roleId=normal&wordSetId=4&wordId=0')
+  })
+
+  it('word set details dialog', () => {
+    cy.visit('/')
+
+    // Closed by default
+    cy.contains('Word set details').should('not.exist')
+
+    // Opens dialog
+    cy.get(byAriaLabel('Word set details')).click()
+    cy.contains('Word set details')
+    cy.contains('Simple 1')
+    cy.contains('Hot 6')
+    cy.contains('Set number 1 from the board game "Remolacha".')
+    cy.contains('Español')
+    cy.contains('Diary')
+    cy.contains('Beast')
+    cy.contains('Laughter')
+
+    // Closes dialog
+    cy.contains('Close').click()
+    cy.get(byAriaLabel('Word set details'))
+    cy.contains('Word set details').should('not.exist')
   })
 })

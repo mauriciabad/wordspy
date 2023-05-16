@@ -2,6 +2,7 @@
 defineProps<{
   disabled?: boolean
   main?: boolean
+  big?: boolean
 }>()
 const emit = defineEmits<{ (e: 'click'): void }>()
 </script>
@@ -10,7 +11,11 @@ const emit = defineEmits<{ (e: 'click'): void }>()
   <div
     :role="disabled ? undefined : 'button'"
     class="link"
-    :class="{ 'link--main': main, 'link--disabled': disabled }"
+    :class="{
+      'link--main': main,
+      'link--disabled': disabled,
+      'link--big': big,
+    }"
     :tabindex="disabled ? undefined : 0"
     @click="disabled ? null : emit('click')"
     @keypress.enter="disabled ? null : emit('click')"
@@ -45,11 +50,21 @@ const emit = defineEmits<{ (e: 'click'): void }>()
     box-shadow: 0 0 0 3px var(--color-primary);
   }
 
+  &--big {
+    > svg {
+      height: 24px !important;
+    }
+  }
+
   > svg {
     display: inline-block;
     height: 20px;
     margin-right: 0.5rem;
     vertical-align: -0.25em;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &--main {

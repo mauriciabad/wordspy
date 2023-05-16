@@ -2,8 +2,14 @@ export function byTestId<T extends string>(testId: T): `[data-test-id="${T}"]` {
   return `[data-test-id="${testId}"]`
 }
 
-export function getInputByLabel(label: string) {
-  return cy
+export function byAriaLabel<T extends string>(
+  ariaLabel: T
+): `[aria-label="${T}"]` {
+  return `[aria-label="${ariaLabel}"]`
+}
+
+export function getInputByLabel(label: string, parentSelector?: string) {
+  return (parentSelector ? cy.get(parentSelector) : cy)
     .contains(label)
     .invoke('attr', 'for')
     .then((id) => {
