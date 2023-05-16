@@ -1,4 +1,4 @@
-import { byTestId, urlShouldEqual } from '../support/helpers'
+import { byAriaLabel, byTestId, urlShouldEqual } from '../support/helpers'
 import { getInputByLabel } from '../support/helpers'
 
 describe('Home view', () => {
@@ -21,7 +21,7 @@ describe('Home view', () => {
 
     // Generate round number
     getInputByLabel('Round number').clear().type('8725')
-    cy.get('[aria-label="Generate"]').click()
+    cy.get(byAriaLabel('Generate')).click()
     getInputByLabel('Round number').should('not.have.value', '8725')
     getInputByLabel('Round number').should('not.have.value', '')
   })
@@ -120,7 +120,7 @@ describe('Home view', () => {
     cy.contains('Word set details').should('not.exist')
 
     // Opens dialog
-    cy.get('[aria-label="Word set details"]').click()
+    cy.get(byAriaLabel('Word set details')).click()
     cy.contains('Word set details')
     cy.contains('Simple 1')
     cy.contains('Hot 6')
@@ -132,7 +132,7 @@ describe('Home view', () => {
 
     // Closes dialog
     cy.contains('Close').click()
-    cy.get('[aria-label="Word set details"]')
+    cy.get(byAriaLabel('Word set details'))
     cy.contains('Word set details').should('not.exist')
   })
 })

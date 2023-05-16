@@ -1,4 +1,4 @@
-import { byTestId, getInputByLabel } from '../support/helpers'
+import { byAriaLabel, byTestId, getInputByLabel } from '../support/helpers'
 
 describe('Internationalization', () => {
   it('Changes languages', () => {
@@ -13,7 +13,7 @@ describe('Internationalization', () => {
     // From word set details dialog
     cy.visit('/')
 
-    cy.get('[aria-label="Word set details"]').click()
+    cy.get(byAriaLabel('Word set details')).click()
 
     cy.contains('Word set details')
     cy.contains('Simple 1')
