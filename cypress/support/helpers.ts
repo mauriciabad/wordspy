@@ -9,12 +9,22 @@ export function byAriaLabel<T extends string>(
 }
 
 export function getInputByLabel(label: string, parentSelector?: string) {
-  return (parentSelector ? cy.get(parentSelector) : cy)
-    .contains(label)
-    .invoke('attr', 'for')
-    .then((id) => {
-      cy.get(`#${id}`)
-    })
+  if (parentSelector) {
+    return cy
+      .get(parentSelector)
+      .contains(label)
+      .invoke('attr', 'for')
+      .then((id) => {
+        cy.get(`#${id}`)
+      })
+  } else {
+    return cy
+      .contains(label)
+      .invoke('attr', 'for')
+      .then((id) => {
+        cy.get(`#${id}`)
+      })
+  }
 }
 
 export function urlShouldEqual(path: string) {
