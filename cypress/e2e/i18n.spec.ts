@@ -23,9 +23,9 @@ describe('Internationalization', () => {
     cy.contains('Beast')
     cy.contains('Laughter')
 
-    cy.get(byTestId('word-set-modal'))
-      .get(byTestId('locale-selector'))
-      .select('Español')
+    cy.get(byTestId('word-set-modal')).within(() => {
+      cy.get(byTestId('locale-selector')).select('Español')
+    })
 
     cy.contains('Detalles sobre las colecciones de palabras')
     cy.contains('Simple 1')
@@ -35,11 +35,10 @@ describe('Internationalization', () => {
     cy.contains('Bestia')
     cy.contains('Risa')
 
-    cy.get(byTestId('word-set-modal'))
-      .get(byTestId('locale-selector'))
-      .select('English')
+    cy.get(byTestId('word-set-modal')).within(() => {
+      cy.get(byTestId('locale-selector')).select('English')
+    })
     cy.contains('Close').click()
-
     // Game view with error
     cy.visit('/game')
     cy.get(byTestId('locale-selector'))
