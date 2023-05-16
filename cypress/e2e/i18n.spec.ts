@@ -23,9 +23,7 @@ describe('Internationalization', () => {
     cy.contains('Beast')
     cy.contains('Laughter')
 
-    getInputByLabel('English', cy.get(byTestId('word-set-modal'))).select(
-      'Español'
-    )
+    getInputByLabel('English', byTestId('word-set-modal')).select('Español')
 
     cy.contains('Detalles sobre las colecciones de palabras')
     cy.contains('Simple 1')

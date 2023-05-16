@@ -2,18 +2,19 @@ export function byTestId<T extends string>(testId: T): `[data-test-id="${T}"]` {
   return `[data-test-id="${testId}"]`
 }
 
-export function getInputByLabel<Node extends HTMLElement>(
-  label: string,
-  cy2: Cypress.Chainable<JQuery<Node>> = cy.root()
-) {
-  return cy2.within(() => {
-    cy2
+export function getInputByLabel(label: string, parentSelector?: string) {
+  const getSelectElement = () => {
+    return cy
       .contains(label)
       .invoke('attr', 'for')
       .then((id) => {
-        cy2.get(`#${id}`)
+        cy.get(`#${id}`)
       })
-  })
+  }
+
+  return parentSelector
+    ? cy.get(parentSelector).within(getSelectElement)
+    : getSelectElement()
 }
 
 export function urlShouldEqual(path: string) {
