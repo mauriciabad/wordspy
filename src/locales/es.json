@@ -550,7 +550,7 @@
       },
       "102": {
         "name": "Dinámico 1",
-        "description": "Conceptos que significan cosas distintas cada ronda",
+        "description": "Conceptos que significan cosas distintas cada ronda.",
         "words": {
           "0": "La persona a tu izquierda",
           "1": "La persona que empezó la ronda",
