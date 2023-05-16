@@ -2,6 +2,12 @@ export function byTestId<T extends string>(testId: T): `[data-test-id="${T}"]` {
   return `[data-test-id="${testId}"]`
 }
 
+export function byAriaLabel<T extends string>(
+  ariaLabel: T
+): `[aria-label="${T}"]` {
+  return `[aria-label="${ariaLabel}"]`
+}
+
 export function getInputByLabel(label: string) {
   return cy
     .contains(label)
