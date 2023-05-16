@@ -1,4 +1,4 @@
-import { byAriaLabel, byTestId, getInputByLabel } from '../support/helpers'
+import { byAriaLabel, byTestId } from '../support/helpers'
 
 describe('Internationalization', () => {
   it('Changes languages', () => {
@@ -6,9 +6,9 @@ describe('Internationalization', () => {
     cy.visit('/')
 
     cy.contains("Let's play!")
-    getInputByLabel('English').select('Español')
+    cy.get(byTestId('locale-selector')).select('Español')
     cy.contains('¡A jugar!')
-    getInputByLabel('Español').select('English')
+    cy.get(byTestId('locale-selector')).select('English')
 
     // From word set details dialog
     cy.visit('/')
@@ -23,7 +23,9 @@ describe('Internationalization', () => {
     cy.contains('Beast')
     cy.contains('Laughter')
 
-    getInputByLabel('English', byTestId('word-set-modal')).select('Español')
+    cy.get(byTestId('word-set-modal'))
+      .get(byTestId('locale-selector'))
+      .select('Español')
 
     cy.contains('Detalles sobre las colecciones de palabras')
     cy.contains('Simple 1')
@@ -33,12 +35,14 @@ describe('Internationalization', () => {
     cy.contains('Bestia')
     cy.contains('Risa')
 
-    getInputByLabel('Español', byTestId('word-set-modal')).select('English')
+    cy.get(byTestId('word-set-modal'))
+      .get(byTestId('locale-selector'))
+      .select('English')
     cy.contains('Close').click()
 
     // Game view with error
     cy.visit('/game')
-    getInputByLabel('English')
+    cy.get(byTestId('locale-selector'))
 
     // Game view
     cy.visit('/game?roleId=chaos&wordSetId=4&wordId=1')
@@ -46,12 +50,12 @@ describe('Internationalization', () => {
     cy.contains('Chaos')
     cy.contains('Get eliminated')
 
-    getInputByLabel('English').select('Español')
+    cy.get(byTestId('locale-selector')).select('Español')
 
     cy.contains('Leyenda')
     cy.contains('Caos')
     cy.contains('Se eliminado')
 
-    getInputByLabel('Español').select('English')
+    cy.get(byTestId('locale-selector')).select('English')
   })
 })

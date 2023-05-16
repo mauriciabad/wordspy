@@ -8,23 +8,13 @@ export function byAriaLabel<T extends string>(
   return `[aria-label="${ariaLabel}"]`
 }
 
-export function getInputByLabel(label: string, parentSelector?: string) {
-  if (parentSelector) {
-    return cy
-      .get(parentSelector)
-      .contains(label)
-      .invoke('attr', 'for')
-      .then((id) => {
-        cy.get(`${parentSelector} #${id}`)
-      })
-  } else {
-    return cy
-      .contains(label)
-      .invoke('attr', 'for')
-      .then((id) => {
-        cy.get(`#${id}`)
-      })
-  }
+export function getInputByLabel(label: string) {
+  return cy
+    .contains(label)
+    .invoke('attr', 'for')
+    .then((id) => {
+      cy.get(`#${id}`)
+    })
 }
 
 export function urlShouldEqual(path: string) {
