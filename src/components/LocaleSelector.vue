@@ -36,6 +36,7 @@ const currentLocaleInfo = computed<LocaleInfo | undefined>(() =>
     <select
       id="locale-selector"
       v-model="localeLangOnly"
+      data-test-id="locale-selector"
       class="selector__input"
     >
       <option

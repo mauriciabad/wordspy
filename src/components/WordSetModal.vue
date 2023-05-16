@@ -30,7 +30,7 @@ const { wordSets } = useWordTranslations()
 </script>
 
 <template>
-  <CustomModal v-model="showModal">
+  <CustomModal v-model="showModal" data-test-id="word-set-modal">
     <template #title>
       <h1 class="title">{{ t('ui.wordSetDetails') }}</h1>
     </template>
