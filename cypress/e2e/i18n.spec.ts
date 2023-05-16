@@ -33,7 +33,7 @@ describe('Internationalization', () => {
     cy.contains('Bestia')
     cy.contains('Risa')
 
-    getInputByLabel('Español').select('English')
+    getInputByLabel('Español', byTestId('word-set-modal')).select('English')
     cy.contains('Close').click()
 
     // Game view with error
