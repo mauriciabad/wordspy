@@ -6,12 +6,14 @@ export function getInputByLabel<Node extends HTMLElement>(
   label: string,
   cy2: Cypress.Chainable<JQuery<Node>> = cy.root()
 ) {
-  return cy2
-    .contains(label)
-    .invoke('attr', 'for')
-    .then((id) => {
-      cy2.get(`#${id}`)
-    })
+  return cy2.within(() => {
+    cy2
+      .contains(label)
+      .invoke('attr', 'for')
+      .then((id) => {
+        cy2.get(`#${id}`)
+      })
+  })
 }
 
 export function urlShouldEqual(path: string) {
