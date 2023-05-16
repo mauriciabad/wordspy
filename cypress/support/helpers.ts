@@ -15,7 +15,7 @@ export function getInputByLabel(label: string, parentSelector?: string) {
       .contains(label)
       .invoke('attr', 'for')
       .then((id) => {
-        cy.get(`#${id}`)
+        cy.get(`${parentSelector} #${id}`)
       })
   } else {
     return cy
