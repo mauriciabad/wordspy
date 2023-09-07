@@ -6,7 +6,7 @@
 
 > Eliminate the spies and don't let them find out the secret word.
 
-Use it here: <https://wordspy.netlify.app>
+Use it here: <https://wordspy.mauri.app>
 
 Game based on [Remolacha game](https://boardgamegeek.com/boardgame/353684/remolacha)
 
