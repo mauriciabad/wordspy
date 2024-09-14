@@ -547,23 +547,32 @@
         "27": "Tu",
         "28": "Penetrar",
         "29": "Canción"
-      },
-      "102": {
-        "name": "Dinámico 1",
-        "description": "Conceptos que significan cosas distintas cada ronda.",
-        "words": {
-          "0": "La persona a tu izquierda",
-          "1": "La persona que empezó la ronda",
-          "2": "Noticias recientes",
-          "3": "El tiempo que hace",
-          "4": "Palabra larga",
-          "5": "Tu país",
-          "6": "El trabajo de un jugador",
-          "7": "Objetos a tu alrededor",
-          "8": "Rondas impares: Planta, Ronda pares: Robot",
-          "9": "Tú",
-          "10": "Día de la semana actual"
-        }
+      }
+    },
+    "102": {
+      "name": "Dinámico 1",
+      "description": "Conceptos que significan cosas distintas cada ronda.",
+      "words": {
+        "0": "La persona a tu izquierda",
+        "1": "La persona que empezó la ronda",
+        "2": "Noticias recientes",
+        "3": "El tiempo que hace",
+        "4": "Palabra larga",
+        "5": "Tu lugar de origen",
+        "6": "El trabajo de un jugador",
+        "7": "Objetos a tu alrededor",
+        "8": "Rondas impares: Planta, Ronda pares: Robot",
+        "9": "Tú",
+        "10": "Día de la semana actual",
+        "11": "La primera letra de tu nombre",
+        "12": "Cosas que posees",
+        "13": "Tu deporte",
+        "14": "Un famos{'@'} que admires",
+        "15": "El animal que te recuerda a la persona que hace más que no ves del grupo",
+        "16": "Lo que sientes cuando alguien come pizza con piña",
+        "17": "La palabra que diga la primera persona",
+        "18": "Tu comida favorita",
+        "19": "Di lo que quieras, pero tu turno dura tanto como las letras de la palabra"
       }
     }
   },

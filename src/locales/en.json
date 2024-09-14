@@ -547,23 +547,32 @@
         "27": "You",
         "28": "Penetrate",
         "29": "Song"
-      },
-      "102": {
-        "name": "Dynamic 1",
-        "description": "Concepts that mean a different thing every round",
-        "words": {
-          "0": "The person to your left",
-          "1": "The person that started the round",
-          "2": "Lattest news",
-          "3": "Current weather",
-          "4": "Long word",
-          "5": "Your country",
-          "6": "A player's job",
-          "7": "Objects arround you",
-          "8": "Odd rounds: Plant, Even rounds: Robot",
-          "9": "Yourself",
-          "10": "Current day of the week"
-        }
+      }
+    },
+    "102": {
+      "name": "Dynamic 1",
+      "description": "Concepts that mean a different thing every round",
+      "words": {
+        "0": "The person to your left",
+        "1": "The person that started the round",
+        "2": "Lattest news",
+        "3": "Current weather",
+        "4": "Long word",
+        "5": "Your country",
+        "6": "A player's job",
+        "7": "Objects arround you",
+        "8": "Odd rounds: Plant, Even rounds: Robot",
+        "9": "Yourself",
+        "10": "Current day of the week",
+        "11": "The first letter of your name",
+        "12": "Things you own",
+        "13": "Your sport",
+        "14": "A famous person you admire",
+        "15": "The animal that resembles the person you haven't seen the longest",
+        "16": "how you feel when someone eats pineapple pizza",
+        "17": "The word the first player says",
+        "18": "Your favorite food",
+        "19": "Say anything, but your turn lasts as long as the word's letters"
       }
     }
   },

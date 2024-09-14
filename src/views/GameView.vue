@@ -37,7 +37,16 @@ const isTesting = import.meta.env.MODE === 'testing'
     <HelpButton class="help-button" />
     <div class="wrapper">
       <ShowWordCountdown v-if="hasData" :disabled="isTesting">
-        <h1 class="word">
+        <h1
+          class="word"
+          :class="[
+            `role--${
+              (roleId === 'spy' ? t(`ui.hiddenWord`) : word).length >= 20
+                ? 'long'
+                : 'short'
+            }`,
+          ]"
+        >
           {{ roleId === 'spy' ? t(`ui.hiddenWord`) : word }}
         </h1>
 
@@ -58,6 +67,10 @@ const isTesting = import.meta.env.MODE === 'testing'
 <style scoped lang="scss">
 .word {
   font-size: 4rem;
+
+  &.role--long {
+    font-size: 2rem;
+  }
 }
 
 .role {

@@ -66,7 +66,7 @@ const wordSetsInfo: Record<
     bestPlayedWith: ['es', 'en'],
   },
   '102': {
-    totalWords: 10,
+    totalWords: 20,
     bestPlayedWith: ['es', 'en'],
   },
 }
