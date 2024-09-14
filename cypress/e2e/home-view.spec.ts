@@ -73,7 +73,7 @@ describe('Home view', () => {
     // Spy
     getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
-    getInputByLabel('Player number').clear().type('2')
+    getInputByLabel('Player number').clear().type('3')
 
     cy.contains("Let's play!").click()
 
@@ -84,7 +84,7 @@ describe('Home view', () => {
     // Normal
     getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8724')
-    getInputByLabel('Player number').clear().type('1')
+    getInputByLabel('Player number').clear().type('2')
 
     cy.contains("Let's play!").click()
 
@@ -95,7 +95,7 @@ describe('Home view', () => {
     // Chaos
     getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('8725')
-    getInputByLabel('Player number').clear().type('1')
+    getInputByLabel('Player number').clear().type('2')
 
     cy.contains("Let's play!").click()
 
@@ -106,7 +106,7 @@ describe('Home view', () => {
     // word changes with round, and round 0 is valid
     getInputByLabel('Word set').select('Complex 1')
     getInputByLabel('Round number').clear().type('0')
-    getInputByLabel('Player number').clear().type('1')
+    getInputByLabel('Player number').clear().type('2')
 
     cy.contains("Let's play!").click()
 
