@@ -72,7 +72,7 @@ function handleCreateGame() {
   router.push({
     name: 'game',
     query: {
-      roleId: shuffledRoles[playerNumber.value ?? 0],
+      roleId: shuffledRoles[(playerNumber.value ?? 0) - 1],
       wordSetId: wordSetId.value,
       wordId,
     },
