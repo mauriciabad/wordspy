@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install",
+      "type": "shell",
+      "command": "npm i",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "dev",
+      "type": "npm",
+      "script": "dev"
+    },
+    {
+      "label": "Install and run",
+      "dependsOrder": "sequence",
+      "dependsOn": ["install", "dev"],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
