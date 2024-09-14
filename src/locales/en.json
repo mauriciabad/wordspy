@@ -512,6 +512,68 @@
         "28": "Camel",
         "29": "Money"
       }
+    },
+    "101": {
+      "name": "Wordspy 1",
+      "description": "Custom words for this game.",
+      "words": {
+        "0": "Language",
+        "1": "English",
+        "2": "Disgusting",
+        "3": "Word",
+        "4": "Idea",
+        "5": "Logo",
+        "6": "Symbol",
+        "7": "Hot",
+        "8": "Time",
+        "9": "Friend",
+        "10": "Rich",
+        "11": "Rollex",
+        "12": "Minecraft",
+        "13": "Fake",
+        "14": "Anything",
+        "15": "Nothing",
+        "16": "Big",
+        "17": "Kick",
+        "18": "Aglet",
+        "19": "Life",
+        "20": "Number",
+        "21": "Color",
+        "22": "Vague",
+        "23": "Specific",
+        "24": "Atom",
+        "25": "Seefood",
+        "26": "Stone",
+        "27": "You",
+        "28": "Penetrate",
+        "29": "Song"
+      }
+    },
+    "102": {
+      "name": "Dynamic 1",
+      "description": "Concepts that mean a different thing every round",
+      "words": {
+        "0": "The person to your left",
+        "1": "The person that started the round",
+        "2": "Lattest news",
+        "3": "Current weather",
+        "4": "Long word",
+        "5": "Your country",
+        "6": "A player's job",
+        "7": "Objects arround you",
+        "8": "Odd rounds: Plant, Even rounds: Robot",
+        "9": "Yourself",
+        "10": "Current day of the week",
+        "11": "The first letter of your name",
+        "12": "Things you own",
+        "13": "Your sport",
+        "14": "A famous person you admire",
+        "15": "The animal that resembles the person you haven't seen the longest",
+        "16": "how you feel when someone eats pineapple pizza",
+        "17": "The word the first player says",
+        "18": "Your favorite food",
+        "19": "Say anything, but your turn lasts as long as the word's letters"
+      }
     }
   },
   "help": {

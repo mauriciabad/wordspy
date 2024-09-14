@@ -512,6 +512,68 @@
         "28": "Camello",
         "29": "Dinero"
       }
+    },
+    "101": {
+      "name": "Wordspy 1",
+      "description": "Palabras especialmente pensadas para este juego.",
+      "words": {
+        "0": "Idioma",
+        "1": "Inglés",
+        "2": "Asqueroso",
+        "3": "Palabra",
+        "4": "Idea",
+        "5": "Logo",
+        "6": "Símbolo",
+        "7": "Caliente",
+        "8": "Tiempo",
+        "9": "Amigo",
+        "10": "Rico",
+        "11": "Rollex",
+        "12": "Minecraft",
+        "13": "Falso",
+        "14": "Qualquier cosa",
+        "15": "Nada",
+        "16": "Grande",
+        "17": "Patada",
+        "18": "Herrete",
+        "19": "Vida",
+        "20": "Numero",
+        "21": "Color",
+        "22": "Impreciso",
+        "23": "Específico",
+        "24": "Átomo",
+        "25": "Marisco",
+        "26": "Piedra",
+        "27": "Tu",
+        "28": "Penetrar",
+        "29": "Canción"
+      }
+    },
+    "102": {
+      "name": "Dinámico 1",
+      "description": "Conceptos que significan cosas distintas cada ronda.",
+      "words": {
+        "0": "La persona a tu izquierda",
+        "1": "La persona que empezó la ronda",
+        "2": "Noticias recientes",
+        "3": "El tiempo que hace",
+        "4": "Palabra larga",
+        "5": "Tu lugar de origen",
+        "6": "El trabajo de un jugador",
+        "7": "Objetos a tu alrededor",
+        "8": "Rondas impares: Planta, Ronda pares: Robot",
+        "9": "Tú",
+        "10": "Día de la semana actual",
+        "11": "La primera letra de tu nombre",
+        "12": "Cosas que posees",
+        "13": "Tu deporte",
+        "14": "Un famos{'@'} que admires",
+        "15": "El animal que te recuerda a la persona que hace más que no ves del grupo",
+        "16": "Lo que sientes cuando alguien come pizza con piña",
+        "17": "La palabra que diga la primera persona",
+        "18": "Tu comida favorita",
+        "19": "Di lo que quieras, pero tu turno dura tanto como las letras de la palabra"
+      }
     }
   },
   "help": {

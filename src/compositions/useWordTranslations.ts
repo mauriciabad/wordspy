@@ -61,6 +61,14 @@ const wordSetsInfo: Record<
     totalWords: 30,
     bestPlayedWith: ['es'],
   },
+  '101': {
+    totalWords: 30,
+    bestPlayedWith: ['es', 'en'],
+  },
+  '102': {
+    totalWords: 20,
+    bestPlayedWith: ['es', 'en'],
+  },
 }
 type Locale = 'es' | 'en'
 
