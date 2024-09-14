@@ -41,7 +41,8 @@ const isTesting = import.meta.env.MODE === 'testing'
           class="word"
           :class="[
             `role--${
-              (roleId === 'spy' ? t(`ui.hiddenWord`) : word).length >= 20
+              ((roleId === 'spy' ? t(`ui.hiddenWord`) : word)?.length ?? 0) >=
+              20
                 ? 'long'
                 : 'short'
             }`,
